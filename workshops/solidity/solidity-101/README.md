@@ -44,7 +44,7 @@ Below is a table of the exercises, their corresponding smart contracts, and link
 
 | Topic                        | Contract Code                                         | Contract on Etherscan                                                                                     |
 |------------------------------|------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Points Counter ERC20          | [Points counter ERC20](contracts/TDERC20.sol)        | [0xD21f9A01AD5715D600cB013f21696d9d34bf1B51](https://holesky.etherscan.io/address/0xD21f9A01AD5715D600cB013f21696d9d34bf1B51)                     |
+| Points Counter ERC20          | [Points counter ERC20](contracts/ERC20TD.sol)        | [0xD21f9A01AD5715D600cB013f21696d9d34bf1B51](https://holesky.etherscan.io/address/0xD21f9A01AD5715D600cB013f21696d9d34bf1B51)                     |
 | Calling a Function            | [Ex01](contracts/exercises/ex01.sol)                 | [0x84b30A129ca4e9Ab58E75b258bfCb4C3C676B297](https://holesky.etherscan.io/address/0x84b30A129ca4e9Ab58E75b258bfCb4C3C676B297)                     |
 | Payable Function              | [Ex02](contracts/exercises/ex02.sol)                 | [0xa0c92e581e1Eeace5550162d3A36Ab6eeFAa88c9](https://holesky.etherscan.io/address/0xa0c92e581e1Eeace5550162d3A36Ab6eeFAa88c9)                     |
 | Requires                      | [Ex03](contracts/exercises/ex03.sol)                 | [0xD462ad5eFcF62EA1cE81292A0D155b842778ff61](https://holesky.etherscan.io/address/0xD462ad5eFcF62EA1cE81292A0D155b842778ff61)                     |
@@ -67,7 +67,7 @@ Below is a table of the exercises, their corresponding smart contracts, and link
 
 | Topic                        | Contract Code                                         | Contract on Etherscan                                                                                     |
 |------------------------------|------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Points Counter ERC20          | [Points counter ERC20](contracts/TDERC20.sol)        | [0x491421D72FE3Ce027307dA0205A2f7Ca3115F0cb](https://sepolia.etherscan.io/address/0x491421D72FE3Ce027307dA0205A2f7Ca3115F0cb)                     |
+| Points Counter ERC20          | [Points counter ERC20](contracts/ERC20TD.sol)        | [0x491421D72FE3Ce027307dA0205A2f7Ca3115F0cb](https://sepolia.etherscan.io/address/0x491421D72FE3Ce027307dA0205A2f7Ca3115F0cb)                     |
 | Calling a Function            | [Ex01](contracts/exercises/ex01.sol)                 | [0x9DC488038175076Ab6A645682A9148D63D5841d4](https://sepolia.etherscan.io/address/0x9DC488038175076Ab6A645682A9148D63D5841d4)                     |
 | Payable Function              | [Ex02](contracts/exercises/ex02.sol)                 | [0x9119605dAFEFb09dfc620E9DA7dfD6Ec62A4c442](https://sepolia.etherscan.io/address/0x9119605dAFEFb09dfc620E9DA7dfD6Ec62A4c442)                     |
 | Requires                      | [Ex03](contracts/exercises/ex03.sol)                 | [0x452f85840E684d90a7AEa284F0d12FEe469F469a](https://sepolia.etherscan.io/address/0x452f85840E684d90a7AEa284F0d12FEe469F469a)                     |
