@@ -56,8 +56,8 @@ Submit pull requests for improvements to this workshop:
 
 ## Addresses
 Network: Ethereum Sepolia
-- **Lending-101 token**: [`0x8dbc7695655ea16e041476fa583f2f86ce4f83c9`](https://sepolia.etherscan.io/address/0x8dbc7695655ea16e041476fa583f2f86ce4f83c9)
-- **Evaluator**: [`0x46D6Bc58f2F17CC1aa5c4FC4964F0171e0047e4D`](https://sepolia.etherscan.io/address/0x46D6Bc58f2F17CC1aa5c4FC4964F0171e0047e4D)
+- **Lending-101 token**: [`0x9d7C956a480820aaBaF7d9F33c97A33EfD15D214`](https://sepolia.etherscan.io/address/0x9d7C956a480820aaBaF7d9F33c97A33EfD15D214)
+- **Evaluator**: [`0xab34164babc40bc2f0550cb8c83e76b84160ca00`](https://sepolia.etherscan.io/address/0xab34164babc40bc2f0550cb8c83e76b84160ca00)
 
 ---
 Happy coding!
