@@ -10,7 +10,7 @@ import {Script} from "forge-std/Script.sol";
 import {ERC20TD} from "../src/ERC20TD.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {Evaluator} from "../src/Evaluator.sol";
-import {AAVE_POOL_ADDRESS, DAI_ADDRESS, ADAI_ADDRESS, USDC_ADDRESS, VARIABLE_DEBT_USDC_ADDRESS} from "../src/Constants.sol";
+import {AAVE_POOL_ADDRESS, ADAI_ADDRESS, ADAI_ADDRESS, USDC_ADDRESS, VARIABLE_DEBT_USDC_ADDRESS} from "../src/Constants.sol";
 
 contract DeployScript is Script {
     function run() public {
@@ -22,7 +22,7 @@ contract DeployScript is Script {
         // Deploy Evaluator
         Evaluator evaluator = new Evaluator(
             erc20,
-            IERC20(DAI_ADDRESS),
+            IERC20(ADAI_ADDRESS),
             IERC20(USDC_ADDRESS),
             IERC20(VARIABLE_DEBT_USDC_ADDRESS),
             AAVE_POOL_ADDRESS
