@@ -248,9 +248,9 @@ contract Evaluator {
         require(msg.sender == AAVEPool);
 
         // Distributing points
-        if (!exerciseProgression[initiator][9]) {
-            exerciseProgression[initiator][9] = true;
-            TDAAVE.distributeTokens(initiator, 4);
+        if (!exerciseProgression[msg.sender][9]) {
+            exerciseProgression[msg.sender][9] = true;
+            TDAAVE.distributeTokens(msg.sender, 4);
         }
 
         // Transmit call to initiator
