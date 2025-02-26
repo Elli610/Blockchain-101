@@ -46,9 +46,9 @@ The workshop is divided into three main components:
 
 ## Getting Started
 
-1. Follow the instructions in `bridge-contracts.md` for Part 1
-2. Once your contracts are deployed, proceed to `bridge-indexer.md` for Part 2
-3. After your basic bridge is functioning, continue to `multi-token-bridge.md` for Part 3
+1. Follow the instructions in [`bridge-contracts.md`](./bridge-contracts.md) for Part 1
+2. Once your contracts are deployed, proceed to [`bridge-indexer.md`](./bridge-indexer.md) for Part 2
+3. After your basic bridge is functioning, continue to [`multi-token-bridge.md`](./multi-token-bridge.md) for Part 3
 
 ## Learning Objectives
 
