@@ -11,7 +11,7 @@ import {ERC20TD} from "../src/ERC20TD.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {Evaluator} from "../src/Evaluator.sol";
 import {AAVE_POOL_ADDRESS, ADAI_ADDRESS, ADAI_ADDRESS, USDC_ADDRESS, VARIABLE_DEBT_USDC_ADDRESS} from "../src/Constants.sol";
-
+// forge script script/deployWorkshop.s.sol:DeployScript --rpc-url <your-rpc-url> --broadcast --private-key <your-private-key>
 contract DeployScript is Script {
     function run() public {
         vm.startBroadcast();
