@@ -19,6 +19,7 @@ This repository contains workshops for all levels, covering topics like:
   - [AAVE Lending 101](./workshops/solidity/lending-101/) -> Learn to use AAVE frontend and how to interact with its smart contracts
   - Uniswap 101 _Coming soon_
 - 🌐 **Web3 nodes and infrastructure**:
+  - [Cross-chain Bridge](./workshops/infrastructure/crossChain-bridge/) -> Learn to build a bridge between 2 blockchains and transfer tokens from one to the other
   - [Bitcoind 101](./workshops/nodes/bitcoind-101/) -> Learn to setup and interact with a Bitcoin node and and electrum server
   - [Ethereum Clients 101]() -> Learn to setup and interact with an Ethereum node _(Soon!)_
 - 🔐 **Cryptography** on the blockchain
