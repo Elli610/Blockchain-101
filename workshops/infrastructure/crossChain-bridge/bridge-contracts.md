@@ -278,7 +278,7 @@ Create a contract that will:
        
        address public owner = address(this);
        address public user = makeAddr("user");
-       address public distributor = makeAddr("distributor");;
+       address public distributor = makeAddr("distributor");
        
        function setUp() public {
            // Deploy test token
