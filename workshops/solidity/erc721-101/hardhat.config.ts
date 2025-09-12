@@ -6,21 +6,32 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
+const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL || "";
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.27",
+  solidity: {
+    version: "0.8.27",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200, // Low runs value for size optimization
+      },
+    },
+  },
   networks: {
-    holesky: {
-      url: process.env.HOLESKY_RPC_URL,
+    sepolia: {
+      url: SEPOLIA_RPC_URL,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
-    }
+    },
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY, // Optional: Add etherscan API key if you want to verify contracts
+    apiKey: {
+      sepolia: process.env.ETHERSCAN_API_KEY || "",
+    },
   },
   sourcify: {
-    enabled: false,
-  }
+    enabled: true,
+  },
 };
 
 export default config;
