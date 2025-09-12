@@ -1,4 +1,4 @@
-# ERC721 102
+# ERC721 101
 
 ## Introduction
 Welcome!
@@ -8,12 +8,12 @@ This is an automated workshop that will dive deeper into ERC721 NFT tokens and t
 
 ## How to Work on This TD
 The TD has three components:
-- An ERC20 token, ticker **TD-ERC721-102**, that is used to keep track of points.
-- An evaluator contract that can mint and distribute **TD-ERC721-102** points.
+- An ERC20 token, ticker **TD-ERC721-101**, that is used to keep track of points.
+- An evaluator contract that can mint and distribute **TD-ERC721-101** points.
 - Your custom ERC721 contract for managing digital animals with breeding and auction functionality.
 
-Your goal is to collect as many **TD-ERC721-102** points as possible. Please note:
-- The `transfer` function of **TD-ERC721-102** has been disabled to encourage you to complete the TD with a single address.
+Your goal is to collect as many **TD-ERC721-101** points as possible. Please note:
+- The `transfer` function of **TD-ERC721-101** has been disabled to encourage you to complete the TD with a single address.
 - You can answer the various questions of this workshop with different ERC721 contracts. However, an evaluated address has only one evaluated ERC721 contract at a time. To change the evaluated ERC721 contract associated with your address, call `submitExercise()` with that specific address.
 - In order to receive points, you will need to execute code in `Evaluator.sol` that triggers `TDERC721.distributeTokens(msg.sender, n);`, distributing `n` points.
 - This repo contains an interface `IExerciseSolution.sol`. Your ERC721 contract must conform to this interface to validate the exercises, meaning your contract needs to implement all the functions described in `IExerciseSolution.sol`.
