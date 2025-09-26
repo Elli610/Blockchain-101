@@ -36,11 +36,12 @@ creditStudent(n, msg.sender);
 This function will credit you with `n` points. You can infer the expected actions by carefully reviewing the code in each exercise contract.
 
 ## Exercise Contract Addresses
-> The teacher address, in case you need it: `0x771CF021942625825Bd848ce221d04fF5B7B4dce`
+
 
 ### Ethereum Holesky Testnet
 Below is a table of the exercises, their corresponding smart contracts, and links to interact with them on Etherscan Holesky:
 
+> The teacher address, in case you need it: `0x771CF021942625825Bd848ce221d04fF5B7B4dce`
 
 | Topic                        | Contract Code                                         | Contract on Etherscan                                                                                     |
 |------------------------------|------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
@@ -64,6 +65,8 @@ Below is a table of the exercises, their corresponding smart contracts, and link
 
 ### Ethereum Sepolia Testnet
 Below is a table of the exercises, their corresponding smart contracts, and links to interact with them on Etherscan Sepolia:
+
+> The teacher address, in case you need it: `0x329A76707745586b2992a6837918a8d2b73Dfd3f`
 
 | Topic                        | Contract Code                                         | Contract on Etherscan                                                                                     |
 |------------------------------|------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
