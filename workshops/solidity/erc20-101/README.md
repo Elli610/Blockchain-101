@@ -64,6 +64,10 @@ Your objective is to gather as many **ERC20-101** points as possible. Key detail
 Complete the entire workshop in a single transaction! Implement a `completeWorkshop()` function in a new contract. Call `ex10_allInOne()` to credit all points to the validating contract (2 points).
 
 ## Addresses
+Network: Ethereum Sepolia
+- **ERC20_101**: [`0xe9b502e84D3E0A6deDB58aa61612DcB543D5eB42`](https://sepolia.etherscan.io/address/0xe9b502e84D3E0A6deDB58aa61612DcB543D5eB42)
+- **Evaluator**: [`0x05A644d6d9BBd85861ff927245aaC13bd56e6d57`](https://sepolia.etherscan.io/address/0x05A644d6d9BBd85861ff927245aaC13bd56e6d57)
+
 Network: Ethereum Holesky
 - **ERC20_101**: [`0x5C9Ba52c4F1a676D6ec88d8D2684FCC765b1E4A0`](https://holesky.etherscan.io/address/0x5C9Ba52c4F1a676D6ec88d8D2684FCC765b1E4A0)
 - **Evaluator**: [`0xB8d4fDEe700263F6f07800AECd702C3D0D74E601`](https://holesky.etherscan.io/address/0xB8d4fDEe700263F6f07800AECd702C3D0D74E601)
