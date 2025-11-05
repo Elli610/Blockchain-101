@@ -19,14 +19,11 @@ Your objective is to gather as many **ERC20-101** points as possible. Key detail
 - The evaluator contract may need ETH to buy your tokens. Ensure it has enough ETH, or send ETH to it directly.
 
 ### Getting to Work
-- Clone the repository to your machine.
-- Install the required packages with `npm install`.
+- Create your own repository and initialize forge
 - Obtain an ethereum API key (from Alchemy, Infura, or any other provider).
 - Create a `.env` file with a mnemonic for deployment and include your Infura and Etherscan API keys.
-- Test your Holesky network connection with `npx hardhat console --network holesky`.
 - To deploy a contract, create a deployment script in the `scripts/` folder. Review the deployment setup in the repo and modify it for your contract.
-- Deploy your contract locally with `npx hardhat run scripts/your-script.js`.
-- Deploy to Holesky using `npx hardhat run scripts/your-script.js --network holesky`.
+- Deploy your contract and compelte the exercises !
 
 ## Points List
 > See the contract addresses and etherscan links at the end of this document.
