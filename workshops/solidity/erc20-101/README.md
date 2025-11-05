@@ -34,7 +34,7 @@ Your objective is to gather as many **ERC20-101** points as possible. Key detail
 ### Setting Up
 - Create a Git repository and share it with the instructor.
 - Install [Hardhat](https://hardhat.org/) our [Foundry](https://book.getfoundry.sh/) and create a new project (2 point).
-- Get an API key (from Alchemy, Infura or any other provider) (1 point). 
+- Get an API key (from Alchemy, Infura or any other provider) (1 point).
 - Claim your points by calling `ex0_setupProject()` in the evaluator.
 
 ### ERC20 Basics
@@ -71,4 +71,3 @@ Network: Ethereum Sepolia
 Network: Ethereum Holesky
 - **ERC20_101**: [`0x5C9Ba52c4F1a676D6ec88d8D2684FCC765b1E4A0`](https://holesky.etherscan.io/address/0x5C9Ba52c4F1a676D6ec88d8D2684FCC765b1E4A0)
 - **Evaluator**: [`0xB8d4fDEe700263F6f07800AECd702C3D0D74E601`](https://holesky.etherscan.io/address/0xB8d4fDEe700263F6f07800AECd702C3D0D74E601)
-

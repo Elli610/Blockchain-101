@@ -13,6 +13,10 @@ const config: HardhatUserConfig = {
     holesky: {
       url: process.env.HOLESKY_RPC_URL,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
+    },
+    sepolia: {
+      url: process.env.SEPOLIA_RPC_URL,
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
     }
   },
   etherscan: {
