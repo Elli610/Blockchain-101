@@ -7,6 +7,7 @@ import "../exerciseTemplate.sol";
 Exercise 1: Creating an Ethereum Public address
 In this exercise, you need to:
 - Create an Ethereum public address
+- Get some testnet tokens
 - Call function ping()
 - Your points are credited
 */
