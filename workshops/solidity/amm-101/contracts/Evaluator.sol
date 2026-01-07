@@ -10,10 +10,10 @@ import {PoolKey} from "@uniswap/v4-core/src/types/PoolKey.sol";
 import {IHooks} from "@uniswap/v4-core/src/interfaces/IHooks.sol";
 import {PoolIdLibrary} from "@uniswap/v4-core/src/types/PoolId.sol";
 import {Currency} from "@uniswap/v4-core/src/types/Currency.sol";
-import {IPositionManager, PositionInfo} from "@uniswap/v4-periphery/src/interfaces/IPositionManager.sol";
-import {IStateView} from "@uniswap/v4-periphery/src/interfaces/IStateView.sol";
+import {IPositionManager} from "./interfaces/IPositionManager.sol";
+import {IStateView} from "./interfaces/IStateView.sol";
 import {LPFeeLibrary} from "@uniswap/v4-core/src/libraries/LPFeeLibrary.sol";
-import {PositionInfoLibrary} from "@uniswap/v4-periphery/src/libraries/PositionInfoLibrary.sol";
+import {PositionInfo, PositionInfoLibrary} from "./utils/PositionInfoLibrary.sol";
 import {PoolId} from "@uniswap/v4-core/src/types/PoolId.sol";
 
 uint24 constant POOL_FEE = 500;
