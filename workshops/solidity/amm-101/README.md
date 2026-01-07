@@ -31,9 +31,11 @@ Your objective is to gather as many AMM-101 points as possible. Please note:
 - Deploy on Sepolia with `npx hardhat run scripts/your-script.js --network sepolia`
 
 ## Deployed Contracts
-- **PointERC20 (AMM-101)**: [`0x1Bf7296ED2B4aE31Aa50388A78ca8d8C1fd3a814`](https://sepolia.etherscan.io/address/0x1Bf7296ED2B4aE31Aa50388A78ca8d8C1fd3a814#code)
-- **DummyToken**: [`0x460A829D6655f841b7FeF76E35F10ecA4b5df768`](https://sepolia.etherscan.io/address/0x460A829D6655f841b7FeF76E35F10ecA4b5df768#code)
-- **Evaluator**: [`0x9660f1E4b23F5De017de57907946252E0eD402af`](https://sepolia.etherscan.io/address/0x9660f1E4b23F5De017de57907946252E0eD402af#code)
+- **PointERC20 (AMM-101)**: [`0xb475292FE4B11791aF676979693164d7eb6789fE`](https://sepolia.etherscan.io/address/0xb475292FE4B11791aF676979693164d7eb6789fE#code)
+- **DummyToken**: [`0x14BB335916E6C8e34347103dE62F4f41235D51DF`](https://sepolia.etherscan.io/address/0x14BB335916E6C8e34347103dE62F4f41235D51DF#code)
+- **Evaluator**: [`0x1C7A360bb8e4F7b5A056Fcce0fC370c0C13e6bF4`](https://sepolia.etherscan.io/address/0x1C7A360bb8e4F7b5A056Fcce0fC370c0C13e6bF4#code)
+
+> Note: Wrapping eth is not needed anymore to interact with uniswap since v4
 
 ## Points list
 ### Setting up

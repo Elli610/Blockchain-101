@@ -1,6 +1,7 @@
 import { network } from "hardhat";
 import "dotenv/config";
 
+// deploy with: npx hardhat run scripts/deploy-amm101.ts --build-profile production --network sepolia
 async function main() {
   const { ethers, networkName } = await network.connect();
 
@@ -31,7 +32,7 @@ async function main() {
   // Uniswap V2 addresses
   const positionManagerV4 = "0x429ba70129df741B2Ca2a85BC3A2a3328e5c09b4";
   const stateViewV4 = "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c";
-  const wethAddress = "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14";
+  const wethAddress = "0x0000000000000000000000000000000000000000";
 
   // Deploy Evaluator
   console.log("Deploying Evaluator...");
