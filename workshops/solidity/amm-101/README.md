@@ -23,9 +23,8 @@ Your objective is to gather as many AMM-101 points as possible. Please note:
 ### Getting to work
 - Clone the repo on your machine
 - Install the required packages `npm i`
-- Register for an Infura API key
-- Register for an Etherscan API key
-- Create a `.env` file that contains a mnemonic phrase for deployment, an Infura API key and an Etherscan API key
+- Get an api key
+- Create a `.env` file that contains a mnemonic phrase for deployment, an rpc API key and an Etherscan API key
 - Test that you are able to connect to the Sepolia network with `npx hardhat console --network sepolia`
 - To deploy a contract, configure a script in the [scripts folder](scripts). Look at the way the TD is deployed and try to iterate
 - Test your deployment locally with `npx hardhat run scripts/your-script.js`
@@ -39,7 +38,7 @@ Your objective is to gather as many AMM-101 points as possible. Please note:
 ## Points list
 ### Setting up
 - Create a git repository and share it with the teacher
-- Install Hardhat and create an empty Hardhat project. Create an Infura API key to be able to deploy to the Sepolia testnet
+- Install Hardhat and create an empty Hardhat project. Create a rpc API key to be able to deploy to the Sepolia testnet
 
 These points will be attributed manually if you do not manage to have your contract interact with the evaluator, or automatically in the first ERC20 question.
 
