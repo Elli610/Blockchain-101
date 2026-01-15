@@ -21,14 +21,10 @@ Your objective is to gather as many AMM-101 points as possible. Please note:
 - The Evaluator contract sometimes needs to make payments to buy your tokens. Make sure it has enough ETH to do so! If not, you can send ETH directly to the contract.
 
 ### Getting to work
-- Clone the repo on your machine
-- Install the required packages `npm i`
+- Setup a forge or hardhat project
 - Get an api key
 - Create a `.env` file that contains a mnemonic phrase for deployment, an rpc API key and an Etherscan API key
-- Test that you are able to connect to the Sepolia network with `npx hardhat console --network sepolia`
-- To deploy a contract, configure a script in the [scripts folder](scripts). Look at the way the TD is deployed and try to iterate
-- Test your deployment locally with `npx hardhat run scripts/your-script.js`
-- Deploy on Sepolia with `npx hardhat run scripts/your-script.js --network sepolia`
+- Start writing code !
 
 ## Deployed Contracts
 - **PointERC20 (AMM-101)**: [`0xb475292FE4B11791aF676979693164d7eb6789fE`](https://sepolia.etherscan.io/address/0xb475292FE4B11791aF676979693164d7eb6789fE#code)
@@ -40,7 +36,7 @@ Your objective is to gather as many AMM-101 points as possible. Please note:
 ## Points list
 ### Setting up
 - Create a git repository and share it with the teacher
-- Install Hardhat and create an empty Hardhat project. Create a rpc API key to be able to deploy to the Sepolia testnet
+- Install Forge or Hardhat and create an empty project. Create a rpc API key to be able to deploy to the Sepolia testnet
 
 These points will be attributed manually if you do not manage to have your contract interact with the evaluator, or automatically in the first ERC20 question.
 
@@ -80,13 +76,10 @@ Extra points if you find bugs/corrections this TD can benefit from, and submit a
 - Publish the code of the Evaluator on Etherscan using the "Verify and publish" functionality
 
 
-Note:
-if you get this error running the script:
-```
-The package "permit2" is not installed.
-```
-run:
-```
-cd node_modules
-ln -s @uniswap/v4-periphery/lib/permit2 permit2
-```bash
+> Note:
+> if you get this error running the script:
+> `The package "permit2" is not installed.`
+> 
+> run:
+> `cd node_modules && ln -s @uniswap/v4-periphery/lib/permit2 permit2`
+
