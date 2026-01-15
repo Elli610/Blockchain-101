@@ -44,7 +44,7 @@ These points will be attributed manually if you do not manage to have your contr
 - Find the dummyToken address by calling `dummyToken()` on the Evaluator
 - Buy some units of dummyToken on Uniswap V4. You can do this using their interface or by interacting with the contracts directly
 - Prove that you own these tokens by calling `ex1_showIHaveTokens()` (2 pts)
-- Provide liquidity to the WETH - dummyToken pool on Uniswap V4 using the Position Manager
+- Provide liquidity to the ETH - dummyToken pool on Uniswap V4 using the Position Manager
 - Prove that you provided liquidity by calling `ex2_showIProvidedLiquidity()` with your position NFT token ID (2 pts)
 
 ### ERC20 basics
@@ -55,19 +55,19 @@ These points will be attributed manually if you do not manage to have your contr
 - Call `ex6b_testErc20TickerAndSupply()` in the evaluator to receive your points (2 pts)
 
 ### Uniswap V4 basics - again
-- Create a Uniswap V4 pool for your token paired with WETH and add liquidity to it using the Position Manager
+- Create a Uniswap V4 pool for your token paired with ETH and add liquidity to it using the Position Manager
 - Call `ex7_tokenIsTradableOnUniswap` to show your token is tradable on Uniswap V4 (5 pts)
 
 ### Uniswap V4 integration
 You will need to interact with Uniswap V4's PoolManager and related contracts to complete this part.
-- Create a contract that can swap tokens in Uniswap V4 in the WETH/Your token pool
+- Create a contract that can swap tokens in Uniswap V4 in the ETH/Your token pool
 - Submit your contract address using `submitExercice()` (repeat as needed)
 - Prove your contract works by calling `ex8_contractCanSwapVsEth()` in the evaluator (1 pt)
 - Create a contract that can swap tokens in Uniswap V4 in the dummyToken/Your token pool
 - Prove your contract works by calling `ex9_contractCanSwapVsDummyToken()` in the evaluator (2 pts)
-- Create a contract that can deposit tokens in Uniswap V4 in the WETH/Your token pool using the Position Manager
+- Create a contract that can deposit tokens in Uniswap V4 in the ETH/Your token pool using the Position Manager
 - Prove your contract works by calling `ex10_contractCanProvideLiquidity()` in the evaluator (2 pts)
-- Create a contract that can withdraw tokens from Uniswap V4 from the WETH/Your token pool using the Position Manager
+- Create a contract that can withdraw tokens from Uniswap V4 from the ETH/Your token pool using the Position Manager
 - Prove your contract works by calling `ex11_contractCanWithdrawLiquidity()` in the evaluator (2 pts)
 
 ### Extra points
