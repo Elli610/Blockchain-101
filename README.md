@@ -17,7 +17,7 @@ This repository contains workshops for all levels, covering topics like:
   - NFTs _Coming soon_
 - 💸 **DeFi concepts and tools** (smart contracts):
   - [AAVE Lending 101](./workshops/solidity/lending-101/) -> Learn to use AAVE frontend and how to interact with its smart contracts
-  - Uniswap 101 _Coming soon_
+  - [Uniswap 101](./workshops/solidity/amm-101/) -> learn how to interact with uniswap v4
 - 🌐 **Web3 nodes and infrastructure**:
   - [Cross-chain Bridge](./workshops/infrastructure/crossChain-bridge/) -> Learn to build a bridge between 2 blockchains and transfer tokens from one to the other
   - [Bitcoind 101](./workshops/nodes/bitcoind-101/) -> Learn to setup and interact with a Bitcoin node and and electrum server
@@ -26,6 +26,9 @@ This repository contains workshops for all levels, covering topics like:
   - _soon!_
 - 🧑‍💻 **Account abstraction**
   - _soon!_
+
+## 📚 Interactive apps overview
+ In the [interactive](./interactive) folder, you can find several simple apps to illustrate some concepts.
 
 ## 🤝 How to Contribute
 We welcome contributions from everyone! Here's how you can get involved:

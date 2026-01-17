@@ -1,0 +1,14 @@
+{
+  "name": "bitcoin-pow-demo",
+  "version": "1.0.0",
+  "description": "Educational Bitcoin Proof of Work Visualization",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "npx serve ."
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "serve": "^14.2.0"
+  }
+}
