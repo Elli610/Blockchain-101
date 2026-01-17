@@ -1,0 +1,1283 @@
+/* ============================================================================
+   Bitcoin Proof of Work Visualization - Styles
+   ============================================================================ */
+
+:root {
+  /* Bitcoin-inspired color palette */
+  --bitcoin-orange: #f7931a;
+  --bitcoin-orange-dark: #e88a17;
+  --bitcoin-orange-light: #ffa940;
+
+  /* UI Colors */
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --bg-card: #1c2128;
+
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+
+  --border-color: #30363d;
+  --border-highlight: #444c56;
+
+  /* Status Colors */
+  --success: #3fb950;
+  --success-bg: rgba(63, 185, 80, 0.15);
+  --danger: #f85149;
+  --danger-bg: rgba(248, 81, 73, 0.15);
+  --warning: #d29922;
+  --info: #58a6ff;
+
+  /* Hash visualization colors */
+  --hash-valid: #3fb950;
+  --hash-invalid: #f85149;
+  --hash-equal: #d29922;
+  --hash-neutral: #8b949e;
+  --hash-zero: #58a6ff;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* ============================================================================
+   Base Styles
+   ============================================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+code {
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  background-color: var(--bg-tertiary);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+  color: var(--bitcoin-orange-light);
+}
+
+/* ============================================================================
+   Header
+   ============================================================================ */
+
+header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-xl) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--bitcoin-orange);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* ============================================================================
+   Cards
+   ============================================================================ */
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.card h2 {
+  color: var(--bitcoin-orange);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ============================================================================
+   Educational Content
+   ============================================================================ */
+
+.explanation-content p {
+  margin-bottom: var(--spacing-md);
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.concept {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.concept h4 {
+  color: var(--bitcoin-orange-light);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+.concept p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ============================================================================
+   Form Elements
+   ============================================================================ */
+
+.input-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.input-group label {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.9rem;
+}
+
+.input-group.inline {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-group.inline label {
+  margin-bottom: 0;
+}
+
+.input-group.inline input {
+  flex: 1;
+  min-width: 200px;
+}
+
+input[type="text"] {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--bitcoin-orange);
+}
+
+/* ============================================================================
+   Difficulty Section
+   ============================================================================ */
+
+.difficulty-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.difficulty-section > label {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.preset-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.preset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 120px;
+}
+
+.preset-btn:hover {
+  border-color: var(--bitcoin-orange);
+  background-color: var(--bg-tertiary);
+}
+
+.preset-btn.active {
+  border-color: var(--bitcoin-orange);
+  background-color: rgba(247, 147, 26, 0.1);
+}
+
+.preset-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.preset-bits {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.custom-bits-section {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.custom-bits-section label {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.9rem;
+}
+
+.custom-bits-input {
+  display: flex;
+  gap: var(--spacing-sm);
+  max-width: 300px;
+}
+
+.custom-bits-input input {
+  flex: 1;
+  font-family: 'SF Mono', monospace;
+}
+
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+.btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--bitcoin-orange);
+  color: #000;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--bitcoin-orange-light);
+}
+
+.btn-secondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--border-color);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #ff6b61;
+}
+
+.mining-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================================================
+   Info Boxes & Output
+   ============================================================================ */
+
+.info-box,
+.output-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.info-section {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.info-section h4 {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  align-items: baseline;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-row .label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  min-width: 180px;
+}
+
+.info-row .value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.info-row .value.mono {
+  font-family: 'SF Mono', 'Consolas', monospace;
+}
+
+.info-row .value.hash {
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 0.8rem;
+  background-color: var(--bg-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  word-break: break-all;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+
+.info-row .value.highlight {
+  color: var(--bitcoin-orange);
+  font-size: 1.1rem;
+}
+
+/* Hash character highlighting */
+.char {
+  font-family: inherit;
+}
+
+.char.valid {
+  color: var(--hash-valid);
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--hash-valid);
+}
+
+.char.invalid {
+  color: var(--hash-invalid);
+  font-weight: bold;
+}
+
+.char.equal {
+  color: var(--hash-equal);
+}
+
+.char.neutral {
+  color: var(--hash-neutral);
+}
+
+.char.zero {
+  color: var(--hash-zero);
+}
+
+.char.significant {
+  color: var(--bitcoin-orange-light);
+}
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-item .stat-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.stat-item .stat-value {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'SF Mono', monospace;
+}
+
+/* Status text */
+.success-text {
+  color: var(--success) !important;
+  font-weight: 600;
+}
+
+.failure-text {
+  color: var(--danger) !important;
+}
+
+/* ============================================================================
+   Results
+   ============================================================================ */
+
+.result {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-md);
+}
+
+.result.success {
+  background-color: var(--success-bg);
+  border: 1px solid var(--success);
+}
+
+.result.success h3 {
+  color: var(--success);
+  margin-bottom: var(--spacing-md);
+}
+
+.result.failure {
+  background-color: var(--danger-bg);
+  border: 1px solid var(--danger);
+}
+
+.result.failure h3 {
+  color: var(--danger);
+  margin-bottom: var(--spacing-sm);
+}
+
+.result-details {
+  margin-top: var(--spacing-md);
+}
+
+/* ============================================================================
+   Demo Section
+   ============================================================================ */
+
+.demo-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.demo-note {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-left: 3px solid var(--bitcoin-orange);
+  background-color: var(--bg-tertiary);
+}
+
+.demo-result {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ============================================================================
+   nBits Encoding Visualization
+   ============================================================================ */
+
+.encoding-example {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.encoding-example h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.encoding-breakdown {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-lg);
+}
+
+.encoding-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.byte {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: 'SF Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: var(--radius-sm);
+}
+
+.byte.exponent {
+  background-color: var(--info);
+  color: #000;
+}
+
+.byte.coefficient {
+  background-color: var(--bitcoin-orange);
+  color: #000;
+}
+
+.encoding-part .label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.encoding-formula {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.encoding-formula p {
+  margin-bottom: var(--spacing-sm);
+  font-family: 'SF Mono', monospace;
+}
+
+.target-result {
+  font-size: 0.75rem !important;
+  word-break: break-all;
+  background-color: var(--bg-primary);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+}
+
+.target-result .highlight {
+  color: var(--bitcoin-orange);
+  font-weight: bold;
+}
+
+/* Code blocks */
+.code-block {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  font-family: 'SF Mono', monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  white-space: pre;
+  color: var(--text-secondary);
+  margin: var(--spacing-md) 0;
+}
+
+/* ============================================================================
+   Real Numbers Section
+   ============================================================================ */
+
+.real-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.stat {
+  text-align: center;
+  padding: var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--bitcoin-orange);
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.comparison-note {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.comparison-note h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.comparison-note p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.comparison-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================================
+   Mining History
+   ============================================================================ */
+
+.history-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-entry {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.history-header .difficulty {
+  color: var(--bitcoin-orange);
+  font-weight: 600;
+}
+
+.history-header .bits {
+  font-family: 'SF Mono', monospace;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.history-header .time {
+  color: var(--text-secondary);
+}
+
+.history-details {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.history-details div {
+  margin-bottom: var(--spacing-xs);
+}
+
+.history-details .hash {
+  font-family: 'SF Mono', 'Consolas', monospace;
+  word-break: break-all;
+  background-color: var(--bg-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  margin-top: var(--spacing-sm);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   Technical Details
+   ============================================================================ */
+
+.technical-content h4 {
+  color: var(--text-primary);
+  margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+}
+
+.technical-content h4:first-child {
+  margin-top: 0;
+}
+
+.technical-content p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.technical-content ul {
+  color: var(--text-secondary);
+  margin-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.technical-content li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.tech-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+.tech-table th,
+.tech-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.tech-table th {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tech-table td {
+  color: var(--text-secondary);
+}
+
+.tech-table td:first-child {
+  color: var(--bitcoin-orange-light);
+  font-family: monospace;
+}
+
+.algorithm-steps {
+  padding-left: var(--spacing-lg);
+  color: var(--text-secondary);
+}
+
+.algorithm-steps li {
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+}
+
+/* ============================================================================
+   Hash Comparison Section
+   ============================================================================ */
+
+.comparison-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.algorithm-selection {
+  margin: var(--spacing-md) 0;
+}
+
+.algorithm-selection > label {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.checkbox-label {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.checkbox-label:hover {
+  border-color: var(--bitcoin-orange);
+}
+
+.checkbox-label:has(input:checked) {
+  border-color: var(--bitcoin-orange);
+  background-color: rgba(247, 147, 26, 0.1);
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-text {
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.checkbox-text::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.checkbox-label:has(input:checked) .checkbox-text::before {
+  background-color: var(--bitcoin-orange);
+  border-color: var(--bitcoin-orange);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.checkbox-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  margin-left: 26px;
+}
+
+.comparison-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Comparison Results Table */
+.compare-results {
+  margin-top: var(--spacing-md);
+}
+
+.compare-input-display {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+.compare-table-container {
+  overflow-x: auto;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.compare-table th {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.compare-table td {
+  background-color: var(--bg-secondary);
+}
+
+.algo-name {
+  min-width: 120px;
+}
+
+.algo-name strong {
+  color: var(--bitcoin-orange-light);
+}
+
+.algo-usage {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.hash-output {
+  max-width: 400px;
+}
+
+.hash-value {
+  font-family: 'SF Mono', 'Consolas', monospace;
+  font-size: 0.7rem;
+  word-break: break-all;
+  display: block;
+  padding: var(--spacing-xs);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-sm);
+}
+
+.time-cell {
+  white-space: nowrap;
+}
+
+.time-cell.fast {
+  color: var(--success);
+}
+
+.time-cell.medium {
+  color: var(--warning);
+}
+
+.time-cell.slow {
+  color: var(--danger);
+}
+
+.relative-speed {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.memory-cell.yes {
+  color: var(--info);
+  font-weight: 600;
+}
+
+.memory-cell.no {
+  color: var(--text-muted);
+}
+
+.compare-summary {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--bitcoin-orange);
+}
+
+.compare-summary h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.compare-summary ul {
+  color: var(--text-secondary);
+  margin-left: var(--spacing-lg);
+}
+
+.compare-summary li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Algorithm Info Section */
+.algorithm-info {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.algorithm-info h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.algo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.algo-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.algo-card.sha256 {
+  border-left: 3px solid var(--bitcoin-orange);
+}
+
+.algo-card.scrypt {
+  border-left: 3px solid var(--info);
+}
+
+.algo-card h4 {
+  color: var(--bitcoin-orange-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.algo-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.algo-card ul {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-left: var(--spacing-md);
+}
+
+.algo-card li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.why-different {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.why-different h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.why-different p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.why-different p:last-child {
+  margin-bottom: 0;
+}
+
+/* Benchmark Results */
+.benchmark-results {
+  margin-top: var(--spacing-md);
+}
+
+.benchmark-results h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-md);
+}
+
+.benchmark-table th,
+.benchmark-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.benchmark-table th {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.benchmark-table td {
+  background-color: var(--bg-secondary);
+}
+
+.speed-bar-container {
+  position: relative;
+  height: 24px;
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.speed-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bitcoin-orange), var(--bitcoin-orange-light));
+  border-radius: var(--radius-sm);
+  transition: width 0.3s ease;
+}
+
+.speed-label {
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.benchmark-note {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: var(--spacing-sm);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+/* Loading and error states */
+.loading-text {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.error-text {
+  color: var(--danger);
+}
+
+/* ============================================================================
+   Footer
+   ============================================================================ */
+
+footer {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--spacing-lg);
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  margin-top: var(--spacing-xs);
+}
+
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mining-controls {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .info-row .label {
+    min-width: auto;
+  }
+
+  .input-group.inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-group.inline input {
+    min-width: auto;
+  }
+
+  .preset-container {
+    flex-direction: column;
+  }
+
+  .preset-btn {
+    width: 100%;
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .encoding-breakdown {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tech-table {
+    font-size: 0.8rem;
+  }
+
+  .tech-table th,
+  .tech-table td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .real-numbers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin Proof of Work Visualization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Bitcoin Proof of Work</h1>
+      <p class="subtitle">Interactive Demonstration Using Bitcoin Core's Actual Difficulty System</p>
+    </header>
+
+    <!-- Educational Introduction -->
+    <section class="card explanation">
+      <h2>What is Proof of Work?</h2>
+      <div class="explanation-content">
+        <p>
+          <strong>Proof of Work (PoW)</strong> is the consensus mechanism that secures the Bitcoin network.
+          Miners compete to find a special number (called a <strong>nonce</strong>) that, when combined with
+          the block data and hashed, produces a result that meets certain criteria.
+        </p>
+
+        <div class="concept-grid">
+          <div class="concept">
+            <h4>Double SHA-256</h4>
+            <p>
+              Bitcoin hashes block headers using <code>SHA256(SHA256(header))</code>.
+              This produces a 256-bit (32-byte) hash that must be below the target.
+              The hash is displayed in big-endian (natural reading order).
+            </p>
+          </div>
+
+          <div class="concept">
+            <h4>The Target</h4>
+            <p>
+              A 256-bit number that the hash must be <strong>less than</strong>.
+              Stored compactly as <strong>nBits</strong> (4 bytes) in the block header.
+              Lower target = harder to find valid hash = higher difficulty.
+            </p>
+          </div>
+
+          <div class="concept">
+            <h4>nBits (Compact Target)</h4>
+            <p>
+              Format: <code>0xAABBCCDD</code> where AA is the exponent and BBCCDD is the coefficient.
+              Target = coefficient &times; 256<sup>(exponent-3)</sup>.
+              Genesis block: <code>0x1d00ffff</code>.
+            </p>
+          </div>
+
+          <div class="concept">
+            <h4>Difficulty</h4>
+            <p>
+              <code>difficulty = max_target / current_target</code><br>
+              At difficulty 1 (genesis), target has 32 leading zero bits.
+              Current Bitcoin difficulty is ~90 trillion, requiring ~76 leading zero bits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hash Demonstration Section -->
+    <section class="card">
+      <h2>Try Hashing</h2>
+      <p class="section-description">
+        See how SHA-256 works. Notice how even a tiny change completely transforms the output (avalanche effect).
+      </p>
+
+      <div class="demo-section">
+        <div class="input-group inline">
+          <label for="demo-input">Enter any text:</label>
+          <input type="text" id="demo-input" value="Hello, Bitcoin!" placeholder="Type something...">
+          <button id="demo-hash" class="btn btn-secondary">Hash It</button>
+        </div>
+        <div id="demo-output" class="output-box"></div>
+      </div>
+    </section>
+
+    <!-- Hash Algorithm Comparison Section -->
+    <section class="card">
+      <h2>Compare Hash Functions</h2>
+      <p class="section-description">
+        Compare different hashing algorithms used in cryptocurrencies. See how they differ in speed, output size, and purpose.
+      </p>
+
+      <div class="comparison-section">
+        <div class="input-group">
+          <label for="compare-input">Enter text to hash:</label>
+          <input type="text" id="compare-input" value="Compare these hash functions!" placeholder="Type something...">
+        </div>
+
+        <div class="algorithm-selection">
+          <label>Select algorithms to compare:</label>
+          <div id="algorithm-checkboxes" class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" value="sha256" checked>
+              <span class="checkbox-text">SHA-256</span>
+              <span class="checkbox-desc">Standard cryptographic hash</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="double-sha256" checked>
+              <span class="checkbox-text">Double SHA-256</span>
+              <span class="checkbox-desc">Bitcoin's PoW hash</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="sha512">
+              <span class="checkbox-text">SHA-512</span>
+              <span class="checkbox-desc">Larger 512-bit output</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="scrypt" checked>
+              <span class="checkbox-text">scrypt</span>
+              <span class="checkbox-desc">Memory-hard (Litecoin)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="comparison-controls">
+          <button id="compare-hashes" class="btn btn-primary">Compare Hashes</button>
+          <button id="run-benchmark" class="btn btn-secondary">Run Speed Benchmark</button>
+        </div>
+
+        <div id="compare-output" class="output-box"></div>
+        <div id="benchmark-output" class="output-box"></div>
+      </div>
+
+      <!-- Algorithm Information -->
+      <div class="algorithm-info">
+        <h3>Understanding the Algorithms</h3>
+        <div class="algo-grid">
+          <div class="algo-card sha256">
+            <h4>SHA-256</h4>
+            <p>The foundation of Bitcoin's security. Fast on CPUs and GPUs, but also fast on specialized ASICs.</p>
+            <ul>
+              <li>Output: 256 bits (64 hex chars)</li>
+              <li>Used by: Bitcoin, many protocols</li>
+              <li>ASIC-friendly: Yes</li>
+            </ul>
+          </div>
+          <div class="algo-card scrypt">
+            <h4>scrypt</h4>
+            <p>Memory-hard function designed to resist ASIC mining by requiring significant RAM.</p>
+            <ul>
+              <li>Output: Configurable (256 bits typical)</li>
+              <li>Used by: Litecoin, Dogecoin</li>
+              <li>ASIC-resistant: Partially (ASICs now exist)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="why-different">
+          <h4>Why Different Cryptocurrencies Use Different Hash Functions</h4>
+          <p>
+            <strong>Bitcoin chose SHA-256</strong> for its simplicity, security, and speed. However, this made it
+            profitable to build specialized mining hardware (ASICs), centralizing mining power.
+          </p>
+          <p>
+            <strong>Litecoin chose scrypt</strong> to be "ASIC-resistant" - the memory requirements were meant to
+            make specialized hardware impractical. However, scrypt ASICs were eventually developed.
+          </p>
+          <p>
+            <strong>Other approaches:</strong> Ethereum used Ethash (memory-hard), Monero uses RandomX (CPU-optimized),
+            and newer coins experiment with various algorithms to balance security, decentralization, and energy efficiency.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mining Simulation Section -->
+    <section class="card">
+      <h2>Mining Simulation</h2>
+      <p class="section-description">
+        Experience mining with Bitcoin's actual difficulty system. Select a preset or enter a custom nBits value.
+      </p>
+
+      <!-- Block Data Input -->
+      <div class="input-group">
+        <label for="block-data">Block Data (simulated transactions):</label>
+        <input type="text" id="block-data" value="Alice pays Bob 1 BTC" placeholder="Enter block data...">
+      </div>
+
+      <!-- Difficulty Presets -->
+      <div class="difficulty-section">
+        <label>Select Difficulty:</label>
+        <div id="preset-buttons" class="preset-container"></div>
+
+        <div class="custom-bits-section">
+          <label for="custom-bits">Or enter custom nBits:</label>
+          <div class="custom-bits-input">
+            <input type="text" id="custom-bits" placeholder="0x1f00ffff">
+            <button id="apply-bits" class="btn btn-secondary">Apply</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Difficulty Information -->
+      <div id="difficulty-info" class="info-box"></div>
+
+      <!-- Mining Controls -->
+      <div class="mining-controls">
+        <button id="start-mining" class="btn btn-primary">Start Mining</button>
+        <button id="stop-mining" class="btn btn-danger">Stop Mining</button>
+      </div>
+
+      <!-- Mining Progress -->
+      <div id="mining-progress" class="info-box"></div>
+
+      <!-- Mining Result -->
+      <div id="mining-result"></div>
+    </section>
+
+    <!-- Technical Details: nBits Encoding -->
+    <section class="card">
+      <h2>Understanding nBits Encoding</h2>
+      <div class="technical-content">
+        <p>
+          Bitcoin stores the 256-bit target in a compact 4-byte format called <strong>nBits</strong>.
+          This is how it works:
+        </p>
+
+        <div class="encoding-example">
+          <h4>Example: Genesis Block (0x1d00ffff)</h4>
+          <div class="encoding-breakdown">
+            <div class="encoding-part">
+              <span class="byte exponent">1d</span>
+              <span class="label">Exponent (29 decimal)</span>
+            </div>
+            <div class="encoding-part">
+              <span class="byte coefficient">00</span>
+              <span class="byte coefficient">ff</span>
+              <span class="byte coefficient">ff</span>
+              <span class="label">Coefficient (0x00ffff)</span>
+            </div>
+          </div>
+          <div class="encoding-formula">
+            <p>Target = 0x00ffff &times; 256<sup>(29-3)</sup> = 0x00ffff &times; 256<sup>26</sup></p>
+            <p class="target-result">
+              = 0x00000000<span class="highlight">FFFF</span>0000000000000000000000000000000000000000000000000000
+            </p>
+          </div>
+        </div>
+
+        <h4>The Formula</h4>
+        <pre class="code-block">target = coefficient × 256^(exponent - 3)
+
+// In code (Bitcoin Core: src/arith_uint256.cpp):
+if (exponent <= 3) {
+    target = coefficient >> (8 * (3 - exponent));
+} else {
+    target = coefficient << (8 * (exponent - 3));
+}</pre>
+
+        <h4>Special Rules</h4>
+        <ul>
+          <li>If the coefficient's highest bit is set (0x800000+), it would be interpreted as negative, so an extra zero byte is added</li>
+          <li>Maximum target (difficulty 1): 0x1d00ffff = ~2.7 × 10<sup>67</sup></li>
+          <li>Each 1-byte decrease in exponent increases difficulty by 256×</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Real Bitcoin Context -->
+    <section class="card">
+      <h2>Real Bitcoin Numbers</h2>
+      <div class="real-numbers">
+        <div class="stat">
+          <div class="stat-value">~90T</div>
+          <div class="stat-label">Current network difficulty</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">~700 EH/s</div>
+          <div class="stat-label">Network hash rate</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">~10 min</div>
+          <div class="stat-label">Target block time</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">2,016</div>
+          <div class="stat-label">Blocks per adjustment</div>
+        </div>
+      </div>
+
+      <div class="comparison-note">
+        <h4>Difficulty Adjustment Algorithm</h4>
+        <p>Every 2,016 blocks (~2 weeks), Bitcoin adjusts difficulty:</p>
+        <pre class="code-block">new_target = old_target × (actual_time / expected_time)
+
+// Clamped to prevent extreme changes:
+// - Maximum 4× increase per adjustment
+// - Maximum 4× decrease per adjustment
+
+expected_time = 2016 × 10 minutes = 20,160 minutes</pre>
+        <p>
+          If blocks came too fast, target decreases (difficulty increases).
+          If blocks came too slow, target increases (difficulty decreases).
+        </p>
+      </div>
+    </section>
+
+    <!-- Mining History -->
+    <section class="card">
+      <h2>Mining History</h2>
+      <p class="section-description">Your successfully mined blocks appear here.</p>
+      <div id="mining-history" class="history-container"></div>
+    </section>
+
+    <!-- Block Header Structure -->
+    <section class="card">
+      <h2>Block Header Structure</h2>
+      <div class="technical-content">
+        <p>The block header is exactly <strong>80 bytes</strong> and contains:</p>
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Size</th>
+              <th>Description</th>
+              <th>Endianness</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Version</td>
+              <td>4 bytes</td>
+              <td>Block version (currently 0x20000000 for BIP9)</td>
+              <td>Little</td>
+            </tr>
+            <tr>
+              <td>Previous Block Hash</td>
+              <td>32 bytes</td>
+              <td>Double-SHA256 of previous block header</td>
+              <td>Internal</td>
+            </tr>
+            <tr>
+              <td>Merkle Root</td>
+              <td>32 bytes</td>
+              <td>Root hash of transaction merkle tree</td>
+              <td>Internal</td>
+            </tr>
+            <tr>
+              <td>Timestamp</td>
+              <td>4 bytes</td>
+              <td>Unix timestamp (seconds since 1970)</td>
+              <td>Little</td>
+            </tr>
+            <tr>
+              <td>nBits</td>
+              <td>4 bytes</td>
+              <td>Compact target representation</td>
+              <td>Little</td>
+            </tr>
+            <tr>
+              <td>Nonce</td>
+              <td>4 bytes</td>
+              <td>Mining counter (0 to 2<sup>32</sup>-1)</td>
+              <td>Little</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>The Mining Algorithm</h4>
+        <ol class="algorithm-steps">
+          <li>Construct 80-byte block header with all fields (nonce = 0)</li>
+          <li>Compute <code>hash = SHA256(SHA256(header))</code></li>
+          <li>Interpret hash as 256-bit little-endian integer</li>
+          <li>If <code>hash &lt; target</code>: Block is valid! Broadcast it.</li>
+          <li>Else: Increment nonce and go to step 2</li>
+          <li>If nonce overflows (2<sup>32</sup> attempts): Change timestamp or extra nonce in coinbase transaction, reset nonce to 0</li>
+        </ol>
+      </div>
+    </section>
+
+    <footer>
+      <p>Bitcoin Proof of Work Educational Demonstration</p>
+      <p class="footer-note">Using Bitcoin Core's actual difficulty encoding (nBits compact format)</p>
+    </footer>
+  </div>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>
