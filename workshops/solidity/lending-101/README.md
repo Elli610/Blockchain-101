@@ -23,14 +23,14 @@ Your objective is to gather as many **Lend-101** points as possible. Key details
 - Create a `.env` file with your private key and any required API keys.
 - Claim testnet ETH from the [Sepolia faucet](https://sepoliafaucet.com/).
 - Get test tokens from AAVE's faucet:
-  1. Go to [AAVE's app](https://app.aave.com/)
+  1. Go to [AAVE's gho test app](https://gho.aave.com/faucet/)
   2. Switch to Sepolia testnet mode in the settings
   3. Navigate to the faucet section
 - Test your deployment setup locally with `forge test`.
 - Deploy to Sepolia using `forge script`.
 
 ### AAVE Basics (8 points)
-Using [AAVE's website](https://app.aave.com/):
+Using [AAVE's gho test website](https://gho.aave.com/):
 1. Enable testnet mode in the settings (top right gear icon).
 2. Deposit the right assets in AAVE and call `ex1_showIDepositedTokens()` (2 points).
 3. Borrow the right assets from AAVE and call `ex2_showIBorrowedTokens()` (2 points).
@@ -56,8 +56,8 @@ Submit pull requests for improvements to this workshop:
 
 ## Addresses
 Network: Ethereum Sepolia
-- **Lending-101 token**: [`0x643454f32f3Ab71a6C869eC3f87Ce6504046323f`](https://sepolia.etherscan.io/address/0x643454f32f3Ab71a6C869eC3f87Ce6504046323f)
-- **Evaluator**: [`0x6fc00c1798c5fa820a701ba1c4592e99441afb20`](https://sepolia.etherscan.io/address/0x6fc00c1798c5fa820a701ba1c4592e99441afb20)
+- **Lending-101 token**: [`0x029190697Aaba3138B9b2Fa97e0E1386AF61e8A0`](https://sepolia.etherscan.io/address/0x029190697Aaba3138B9b2Fa97e0E1386AF61e8A0)
+- **Evaluator**: [`0xD53EF6272e8df4d3e7c79568A7ea11FA444a438a`](https://sepolia.etherscan.io/address/0xD53EF6272e8df4d3e7c79568A7ea11FA444a438a)
 
 ---
 Happy coding!

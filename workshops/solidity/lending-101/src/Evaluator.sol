@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract Evaluator {
     ERC20TD public TDAAVE;
-    IERC20 public aDAI;
+    IERC20 public aEthWBTC;
     IERC20 public USDC;
     IERC20 public variableDebtUSDC;
     address public AAVEPool;
@@ -20,26 +20,26 @@ contract Evaluator {
 
     event constructedCorrectly(
         address erc20Address,
-        address adaiAddress,
+        address aEthWBTCAddress,
         address UsdcAddress,
         address variableDebtUSDCAddress
     );
 
     constructor(
         ERC20TD _TDAAVE,
-        IERC20 _aDAI,
+        IERC20 _aEthWBTC,
         IERC20 _USDC,
         IERC20 _variableDebtUSDC,
         address _AAVEPool
     ) {
         TDAAVE = _TDAAVE;
-        aDAI = _aDAI;
+        aEthWBTC = _aEthWBTC;
         USDC = _USDC;
         variableDebtUSDC = _variableDebtUSDC;
         AAVEPool = _AAVEPool;
         emit constructedCorrectly(
             address(TDAAVE),
-            address(aDAI),
+            address(aEthWBTC),
             address(USDC),
             address(variableDebtUSDC)
         );
@@ -50,9 +50,9 @@ contract Evaluator {
     receive() external payable {}
 
     function ex1_showIDepositedTokens() public {
-        // Sender should have deposited testnet aDAI
+        // Sender should have deposited testnet WBTC
         require(
-            aDAI.balanceOf(msg.sender) > 0,
+            aEthWBTC.balanceOf(msg.sender) > 0,
             "Sender has not deposited DAI in AAVE"
         );
 
@@ -101,9 +101,9 @@ contract Evaluator {
             "You should have completed ex1"
         );
 
-        // // Sender should have no more testnet aDAI
+        // // Sender should have no more testnet aEthWBTC
         require(
-            aDAI.balanceOf(msg.sender) == 0,
+            aEthWBTC.balanceOf(msg.sender) == 0,
             "Sender has not deposited DAI in AAVE"
         );
 
@@ -115,8 +115,8 @@ contract Evaluator {
     }
 
     function ex5_showContractCanDepositTokens() public {
-        // Reading initial aDai balance
-        uint256 initialBalance = aDAI.balanceOf(
+        // Reading initial aEthWBTC balance
+        uint256 initialBalance = aEthWBTC.balanceOf(
             address(studentExercise[msg.sender])
         );
 
@@ -124,7 +124,7 @@ contract Evaluator {
         studentExercise[msg.sender].depositSomeTokens();
 
         // Read end balance
-        uint256 endBalance = aDAI.balanceOf(
+        uint256 endBalance = aEthWBTC.balanceOf(
             address(studentExercise[msg.sender])
         );
 
@@ -196,8 +196,8 @@ contract Evaluator {
     }
 
     function ex8_showContractCanWithdrawTokens() public {
-        // Reading initial aDai balance
-        uint256 initialBalance = aDAI.balanceOf(
+        // Reading initial aEthWBTC balance
+        uint256 initialBalance = aEthWBTC.balanceOf(
             address(studentExercise[msg.sender])
         );
 
@@ -205,7 +205,7 @@ contract Evaluator {
         studentExercise[msg.sender].withdrawSomeTokens();
 
         // Read end balance
-        uint256 endBalance = aDAI.balanceOf(
+        uint256 endBalance = aEthWBTC.balanceOf(
             address(studentExercise[msg.sender])
         );
 
