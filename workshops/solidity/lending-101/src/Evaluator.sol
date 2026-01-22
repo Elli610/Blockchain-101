@@ -53,7 +53,7 @@ contract Evaluator {
         // Sender should have deposited testnet WBTC
         require(
             aEthWBTC.balanceOf(msg.sender) > 0,
-            "Sender has not deposited DAI in AAVE"
+            "Sender has not deposited WBTC in AAVE"
         );
 
         // Distributing points
