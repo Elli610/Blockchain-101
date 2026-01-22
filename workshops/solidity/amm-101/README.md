@@ -27,9 +27,9 @@ Your objective is to gather as many AMM-101 points as possible. Please note:
 - Start writing code !
 
 ## Deployed Contracts
-- **PointERC20 (AMM-101)**: [`0xb475292FE4B11791aF676979693164d7eb6789fE`](https://sepolia.etherscan.io/address/0xb475292FE4B11791aF676979693164d7eb6789fE#code)
-- **DummyToken**: [`0x14BB335916E6C8e34347103dE62F4f41235D51DF`](https://sepolia.etherscan.io/address/0x14BB335916E6C8e34347103dE62F4f41235D51DF#code)
-- **Evaluator**: [`0x1C7A360bb8e4F7b5A056Fcce0fC370c0C13e6bF4`](https://sepolia.etherscan.io/address/0x1C7A360bb8e4F7b5A056Fcce0fC370c0C13e6bF4#code)
+- **PointERC20 (AMM-101)**: [`0xfB94e01A3e53e4b689865A57A99235359b671Eec`](https://sepolia.etherscan.io/address/0xfB94e01A3e53e4b689865A57A99235359b671Eec#code)
+- **DummyToken**: [`0x259C34CbE3a73595141cAd4a1E712b18917f8549`](https://sepolia.etherscan.io/address/0x259C34CbE3a73595141cAd4a1E712b18917f8549#code)
+- **Evaluator**: [`0x5D99a70E5d1D9AE1a0bD929d754fB8a09DD36365`](https://sepolia.etherscan.io/address/0x5D99a70E5d1D9AE1a0bD929d754fB8a09DD36365#code)
 
 > Note: Wrapping eth is not needed anymore to interact with uniswap since v4
 
@@ -79,7 +79,6 @@ Extra points if you find bugs/corrections this TD can benefit from, and submit a
 > Note:
 > if you get this error running the script:
 > `The package "permit2" is not installed.`
-> 
+>
 > run:
 > `cd node_modules && ln -s @uniswap/v4-periphery/lib/permit2 permit2`
-
