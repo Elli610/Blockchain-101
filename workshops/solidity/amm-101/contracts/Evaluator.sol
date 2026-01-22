@@ -205,7 +205,7 @@ contract Evaluator {
         ) = stateViewV4.getSlot0(studentId);
 
         require(
-            sqrtPriceX96 != 0 && tick != 0 && lpFee != 0,
+            sqrtPriceX96 != 0 && lpFee != 0,
             "Student's pool is not setup"
         );
 
