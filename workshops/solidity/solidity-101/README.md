@@ -55,7 +55,7 @@ Below is a table of the exercises, their corresponding smart contracts, and link
 | Past Transactions             | [Ex10](contracts/exercises/ex10.sol)                 | [0xA4Ee30cB5730a8e6609a532E6111E774bC206200](https://sepolia.etherscan.io/address/0xA4Ee30cB5730a8e6609a532E6111E774bC206200)                     |
 | Composability                 | [Ex11](contracts/exercises/ex11.sol)                 | [0x98c0415C1ABf4C4e08a6FeB1CaC95b9CEA4673F0](https://sepolia.etherscan.io/address/0x98c0415C1ABf4C4e08a6FeB1CaC95b9CEA4673F0)                     |
 | Blockchain Forensics          | [Ex12](contracts/exercises/ex12.sol)                 | Undisclosed                                                                                                |
-| Inline Assembly                 | [Ex13](contracts/exercises/ex13.sol)                 | [0xC0E2957F3d92CC2d19Eb75a86B51663D56448Ebb](https://sepolia.etherscan.io/address/0xC0E2957F3d92CC2d19Eb75a86B51663D56448Ebb)
+| Inline Assembly                 | [Ex13](contracts/exercises/ex13.sol)                 | Skip this one, contract is broken
 | Deploy Your Own Contract       | [Ex14](contracts/exercises/ex14.sol)                 | [0x6Df72d38CC7D5A181aa2A026e89d8D95a8576619](https://sepolia.etherscan.io/address/0x6Df72d38CC7D5A181aa2A026e89d8D95a8576619)                     |
 | All in One!                   | [Ex15](contracts/exercises/ex15.sol)                 | [0xeB5580Dc9c8bd981DE70B518Cc2d614E2CE7BDE4](https://sepolia.etherscan.io/address/0xeB5580Dc9c8bd981DE70B518Cc2d614E2CE7BDE4)                     |
 
