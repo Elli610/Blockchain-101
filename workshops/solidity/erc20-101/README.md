@@ -30,7 +30,7 @@ Your objective is to gather as many **ERC20-101** points as possible. Key detail
 
 ### Setting Up
 - Create a Git repository and share it with the instructor.
-- Install [Hardhat](https://hardhat.org/) our [Foundry](https://book.getfoundry.sh/) and create a new project (2 point).
+- Install [Foundry](https://book.getfoundry.sh/) and create a new project (2 point).
 - Get an API key (from Alchemy, Infura or any other provider) (1 point).
 - Claim your points by calling `ex0_setupProject()` in the evaluator.
 
