@@ -19,23 +19,12 @@ Your goal is to collect as many **TD-ERC721-101** points as possible. Please not
 - This repo contains an interface `IExerciseSolution.sol`. Your ERC721 contract must conform to this interface to validate the exercises, meaning your contract needs to implement all the functions described in `IExerciseSolution.sol`.
 - A high-level description of what's expected for each exercise is in this readme. A detailed description of what's expected can be inferred by reading the code in `Evaluator.sol`.
 - The evaluator contract may need to make payments to purchase your tokens. Ensure it has enough ETH to do so. If not, you can send ETH directly to the contract.
-
-### Getting to Work
-- Clone the repo to your machine.
-- Install the required packages by running `npm install`.
-- Obtain an ethereum API key (from Alchemy, Infura, or any other provider).
-- Setup your `.env` file with your mnemonic phrase, API key, and Etherscan API key.
-- Install and configure a seed phrase or private key for deploying contracts in Hardhat.
-- Test your connection to the Sepolia network with `npx hardhat console --network sepolia`.
-- To deploy a contract, create a deployment script in the `scripts/` folder. Look at how the TD is deployed and iterate from there.
-- Test your deployment locally with `npx hardhat run scripts/your-script.js`.
-- Deploy to the Sepolia testnet with `npx hardhat run scripts/your-script.js --network sepolia`.
-
+  
 ## Points List
 ### Setting Up
 - Create a Git repository and share it with the teacher.
 - Get an API key (from Alchemy, Infura or any other provider) (1 point).
-- Install and configure [Hardhat](https://hardhat.org/) or [Foundry](https://book.getfoundry.sh/) (1 point).
+- Install and configure [Foundry](https://book.getfoundry.sh/) (1 point).
 These points will be awarded manually if you're unable to have your contract interact with the evaluator, or automatically when calling `submitExercise()` for the first time.
 
 ### ERC721 Basics
