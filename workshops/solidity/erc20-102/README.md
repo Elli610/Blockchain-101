@@ -25,10 +25,7 @@ Your goal is to collect as many **TD-ERC20-102** points as possible. Please note
 - Install the required packages by running `npm install`.
 - Obtain an ethereum API key (from Alchemy, Infura, or any other provider).
 - Setup your `.env` file.
-- Install and configure a seed phrase or private key for deploying contracts in Hardhat.
-- Test your connection to the Holesky network with `npx hardhat console --network holesky`.
-- To deploy a contract, create a deployment script in the `scripts/` folder. Look at how the TD is deployed and iterate from there.
-- Deploy the contract to the Holesky testnet with `npx hardhat run --network holesky scripts/deploy.ts`.
+- Install and configure a seed phrase or private key for deploying contracts
 
 ## Points List
 ### Setting Up
