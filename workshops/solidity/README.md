@@ -11,3 +11,4 @@ We recommend you to follow the workshops in the following order:
 - [ERC721-101](./erc721-101/)
 - [ERC20-102](./erc20-102)
 - [AMM-101](./amm-101/)
+- [ERC4626-101](./erc4626-101/)
