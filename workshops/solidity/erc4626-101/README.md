@@ -23,17 +23,7 @@ Your objective is to gather as many **ERC4626-101** points as possible. Key deta
 - Create your own repository and initialize Hardhat or Foundry.
 - Obtain an Ethereum RPC key (Alchemy, Infura, or any other provider).
 - Create a `.env` file (see `.env.example`) with your `PRIVATE_KEY`, `SEPOLIA_RPC_URL`, and optionally `ETHERSCAN_API_KEY`.
-- Write your vault. The easiest starting point is to inherit `ERC4626` from OpenZeppelin v5:
-  ```solidity
-  import "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
-
-  contract MyVault is ERC4626 {
-      constructor(IERC20 asset_, string memory name_, string memory symbol_)
-          ERC20(name_, symbol_)
-          ERC4626(asset_)
-      {}
-  }
-  ```
+- Write your vault implementation.
 - Deploy your vault to Sepolia, then call `submitExercice(<vault>)` on the evaluator.
 - Work through the exercises below.
 
