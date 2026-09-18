@@ -14,15 +14,17 @@ This repository contains workshops for all levels, covering topics like:
   - [Solidity 101](./workshops/solidity/solidity-101/) -> An introduction to the Solidity language
   - [ERC20 101](./workshops/solidity/erc20-101/) -> Learn to master the ERC20 token basic functions
   - [ERC20 102](./workshops/solidity/erc20-102/) -> Dive deeper into managing ERC20 tokens
-  - NFTs _Coming soon_
+  - [ERC721 101](./workshops/solidity/erc721-101/) -> Learn to master the ERC721 NFT standard
+  - [Permit and Signatures 101](./workshops/solidity/permit-signatures-101/) -> Master EIP-712, ERC-2612 permits and Permit2
 - 💸 **DeFi concepts and tools** (smart contracts):
   - [AAVE Lending 101](./workshops/solidity/lending-101/) -> Learn to use AAVE frontend and how to interact with its smart contracts
   - [Uniswap 101](./workshops/solidity/amm-101/) -> learn how to interact with uniswap v4
   - [ERC4626 101](./workshops/solidity/erc4626-101/) -> Build an ERC-4626 tokenized vault and learn how share pricing, deposits, withdrawals and yield accrual work
+  - [Arbitrage 101](./workshops/solidity/arbitrage-101.md) -> Notes and exercises on cross-DEX arbitrage
 - 🌐 **Web3 nodes and infrastructure**:
   - [Cross-chain Bridge](./workshops/infrastructure/crossChain-bridge/) -> Learn to build a bridge between 2 blockchains and transfer tokens from one to the other
   - [Bitcoind 101](./workshops/nodes/bitcoind-101/) -> Learn to setup and interact with a Bitcoin node and and electrum server
-  - [Ethereum Clients 101]() -> Learn to setup and interact with an Ethereum node _(Soon!)_
+  - Ethereum Clients 101 _(Soon!)_
 - 🔐 **Cryptography** on the blockchain
   - _soon!_
 - 🧑‍💻 **Account abstraction**

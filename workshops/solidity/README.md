@@ -12,3 +12,4 @@ We recommend you to follow the workshops in the following order:
 - [ERC20-102](./erc20-102)
 - [AMM-101](./amm-101/)
 - [ERC4626-101](./erc4626-101/)
+- [Permit-Signatures-101](./permit-signatures-101/)
