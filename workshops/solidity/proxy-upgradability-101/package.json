@@ -1,0 +1,26 @@
+{
+  "name": "proxy-upgradability-101",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy:sepolia": "hardhat run --network sepolia scripts/deploy.ts",
+    "verify:sourcify": "ts-node scripts/sourcify-verify.ts"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "description": "Workshop on proxy patterns and contract upgradability (EIP-1167, EIP-1967, EIP-1822 UUPS, Beacon)",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.11",
+    "hardhat": "^2.22.10"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0",
+    "@types/node": "^24.3.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.0",
+    "typescript": "^5.9.2"
+  }
+}

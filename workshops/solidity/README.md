@@ -13,3 +13,4 @@ We recommend you to follow the workshops in the following order:
 - [AMM-101](./amm-101/)
 - [ERC4626-101](./erc4626-101/)
 - [Permit-Signatures-101](./permit-signatures-101/)
+- [Proxy-Upgradability-101](./proxy-upgradability-101/)
