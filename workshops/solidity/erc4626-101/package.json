@@ -1,0 +1,25 @@
+{
+  "name": "erc4626-101",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "hardhat compile",
+    "deploy:sepolia": "hardhat run scripts/deployTD.ts --network sepolia"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "description": "ERC-4626 tokenized vault workshop",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.11",
+    "hardhat": "^2.22.11"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "@types/node": "^24.6.2",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

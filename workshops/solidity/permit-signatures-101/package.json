@@ -1,0 +1,30 @@
+{
+  "name": "permit-signatures-101",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy:sepolia": "hardhat run --network sepolia scripts/deploy.ts",
+    "sign:personal": "hardhat run --network sepolia scripts/sign-personal.ts",
+    "sign:typed": "hardhat run --network sepolia scripts/sign-typed.ts",
+    "sign:permit2612": "hardhat run --network sepolia scripts/sign-permit-2612.ts",
+    "sign:permit2-transfer": "hardhat run --network sepolia scripts/sign-permit2-transfer.ts",
+    "sign:permit2-allowance": "hardhat run --network sepolia scripts/sign-permit2-allowance.ts"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "description": "Workshop covering EIP-712, ERC-2612 and Permit2 signatures",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.11",
+    "hardhat": "^2.22.10"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0",
+    "@types/node": "^24.3.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.0",
+    "typescript": "^5.9.2"
+  }
+}
