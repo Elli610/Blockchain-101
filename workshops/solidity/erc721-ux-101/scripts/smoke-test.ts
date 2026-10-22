@@ -3,8 +3,8 @@
 
 import { ethers } from "hardhat";
 
-const POINTS = "0x96eA03b5ecfF6EeeD96EE8EcEf1153Aa79a03997";
-const EVALUATOR = "0x2822168E32E642a93DC677384d8f3F13E5b0EfC2";
+const POINTS = "0x996BA4faE3a3c2d07aC780401B07E103553eAB92";
+const EVALUATOR = "0xe446502701fA5808DB07D817B00B660fB5EA6bFB";
 
 async function main(): Promise<void> {
   const [me] = await ethers.getSigners();

@@ -71,7 +71,6 @@ Avoid `web3.js v1`: it is unmaintained.
 - Create a page `/fakeMeebits`.
 - Read `FakeMeebitsClaimer` to figure out which token ids have not been claimed yet (**2 pts**, manual).
 - Let the user pick an unclaimed token id and the matching signature from [`signatures/output-sig.json`](./signatures/output-sig.json), then call `claimAToken(tokenId, signature)` on `FakeMeebitsClaimer` from the user's wallet (**2 pts**, manual).
-  > Note: on the current Sepolia deployment, token `0` was minted in the `FakeMeebits` constructor, so claiming it reverts with `ERC721: token already minted`. Pick another id.
 - Call `ex3_claimedFakeMeebits()` on the Evaluator once your wallet holds at least one `FakeMeebits` token (**2 pts**, automatic).
 
 ### UX Quality
@@ -88,11 +87,11 @@ Extra points are available if you find bugs or improvements this TD can benefit 
 
 ## TD Addresses
 Network: Ethereum Sepolia
-- **TDToken (ERC20 Points)**: [`0x96eA03b5ecfF6EeeD96EE8EcEf1153Aa79a03997`](https://sepolia.etherscan.io/address/0x96eA03b5ecfF6EeeD96EE8EcEf1153Aa79a03997)
-- **Evaluator**: [`0x2822168E32E642a93DC677384d8f3F13E5b0EfC2`](https://sepolia.etherscan.io/address/0x2822168E32E642a93DC677384d8f3F13E5b0EfC2)
-- **FakeBAYC**: [`0xF865E7DF924c46556d01997B35ed7A3f85069B62`](https://sepolia.etherscan.io/address/0xF865E7DF924c46556d01997B35ed7A3f85069B62)
-- **FakeNefturians**: [`0x9a5E2c5B08cA4031d3F7fA1D7AAb8FFE79a988E2`](https://sepolia.etherscan.io/address/0x9a5E2c5B08cA4031d3F7fA1D7AAb8FFE79a988E2)
-- **FakeMeebits**: [`0x71A66d19c6ABFc629e0c71D6606105af991713F0`](https://sepolia.etherscan.io/address/0x71A66d19c6ABFc629e0c71D6606105af991713F0)
-- **FakeMeebitsClaimer**: [`0x86FB988958dB5A703B3A458284c36976638A67e3`](https://sepolia.etherscan.io/address/0x86FB988958dB5A703B3A458284c36976638A67e3)
+- **TDToken (ERC20 Points)**: [`0x996BA4faE3a3c2d07aC780401B07E103553eAB92`](https://sepolia.etherscan.io/address/0x996BA4faE3a3c2d07aC780401B07E103553eAB92)
+- **Evaluator**: [`0xe446502701fA5808DB07D817B00B660fB5EA6bFB`](https://sepolia.etherscan.io/address/0xe446502701fA5808DB07D817B00B660fB5EA6bFB)
+- **FakeBAYC**: [`0x262fc337408995376b35f950e98b7fB60CF691f5`](https://sepolia.etherscan.io/address/0x262fc337408995376b35f950e98b7fB60CF691f5)
+- **FakeNefturians**: [`0x4F4f92733eEEe8405764EaA6D2B7304B59642469`](https://sepolia.etherscan.io/address/0x4F4f92733eEEe8405764EaA6D2B7304B59642469)
+- **FakeMeebits**: [`0x589d269675BE36E4cFc3a4e04c9E5dad2ef2C4d6`](https://sepolia.etherscan.io/address/0x589d269675BE36E4cFc3a4e04c9E5dad2ef2C4d6)
+- **FakeMeebitsClaimer**: [`0xA45C08F929dfEf9a2B3E9eB3A5f9728F594f215a`](https://sepolia.etherscan.io/address/0xA45C08F929dfEf9a2B3E9eB3A5f9728F594f215a)
 
 > I encourage you to complete all exercises on the same network and with the same address for optimal point tracking.
