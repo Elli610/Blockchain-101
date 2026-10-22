@@ -10,7 +10,6 @@ contract FakeMeebits is ERC721 {
     constructor() ERC721("Fake Meebits", "FMB") {
         baseTokenURI = "https://meebits.larvalabs.com/meebit/";
         whitelist[msg.sender] = true;
-        _safeMint(msg.sender, 0);
     }
 
     function mintAToken(uint256 _tokenId) public onlyMinter {
