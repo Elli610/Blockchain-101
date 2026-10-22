@@ -24,7 +24,7 @@ This repository contains workshops for all levels, covering topics like:
   - [Arbitrage 101](./workshops/solidity/arbitrage-101.md) -> Notes and exercises on cross-DEX arbitrage
 - 🌐 **Web3 nodes and infrastructure**:
   - [Cross-chain Bridge](./workshops/infrastructure/crossChain-bridge/) -> Learn to build a bridge between 2 blockchains and transfer tokens from one to the other
-  - [Bitcoind 101](./workshops/nodes/bitcoind-101/) -> Learn to setup and interact with a Bitcoin node and and electrum server
+  - [Bitcoind 101](./workshops/infrastructure/bitcoind-101/) -> Learn to setup and interact with a Bitcoin node and an Electrum server. Two variants: real mainnet (1 TB) and a private teacher-hosted custom-signet network with real proof-of-work mining
   - Ethereum Clients 101 _(Soon!)_
 - 🔐 **Cryptography** on the blockchain
   - _soon!_
