@@ -56,7 +56,7 @@ Avoid `web3.js v1`: it is unmaintained.
 - Add a button that calls `claimAToken()` on `FakeBAYC` for the connected user.
 - Call `ex1_claimedFakeBAYC()` on the Evaluator once your wallet holds at least one `FakeBAYC` token (**2 pts**, automatic).
 - Create a page `/fakeBayc/[tokenId]`.
-- Display the image, name, and description referenced by the token's metadata URI (**2 pts**, manual).
+- Display the image and attributes referenced by the token's metadata URI (the FakeBAYC metadata has no `name` or `description` field) (**2 pts**, manual).
 - Show a clean error state on `/fakeBayc/[tokenId]` when the token does not exist (**2 pts**, manual).
 - Create a page `/fakeBayc/gallery/[address]` that lists every `FakeBAYC` token id owned by `[address]`, with lazy-loaded images (**2 pts**, manual).
 
@@ -71,6 +71,7 @@ Avoid `web3.js v1`: it is unmaintained.
 - Create a page `/fakeMeebits`.
 - Read `FakeMeebitsClaimer` to figure out which token ids have not been claimed yet (**2 pts**, manual).
 - Let the user pick an unclaimed token id and the matching signature from [`signatures/output-sig.json`](./signatures/output-sig.json), then call `claimAToken(tokenId, signature)` on `FakeMeebitsClaimer` from the user's wallet (**2 pts**, manual).
+  > Note: on the current Sepolia deployment, token `0` was minted in the `FakeMeebits` constructor, so claiming it reverts with `ERC721: token already minted`. Pick another id.
 - Call `ex3_claimedFakeMeebits()` on the Evaluator once your wallet holds at least one `FakeMeebits` token (**2 pts**, automatic).
 
 ### UX Quality
