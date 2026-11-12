@@ -1,0 +1,83 @@
+# Part 1: Deanonymize Me
+
+## Introduction
+An Ethereum address is a pseudonym, not an identity. Many people conclude that a fresh address is therefore private. In this part you play the analyst: the instructor has seeded Sepolia with transactions made by "users" trying to hide, and you must link them back together.
+
+Everything you break here is something a later part of the workshop fixes. Keep notes on *why* each trick worked.
+
+* **Network:** Sepolia
+* **Grading:** Evaluator, **8 points**
+* **Tools:** a block explorer, `cast` (Foundry) or a short ethers.js script
+
+## What Leaks on a Transparent Chain
+For every transaction, anyone can read the sender, the recipient, the amount, the calldata, the gas price and the block timestamp, forever. Analysts combine these with a few heuristics:
+
+* **Funding link.** A new address needs ETH for gas. Whoever sent it that first ETH is usually its owner, or knows them.
+* **Amount fingerprint.** An unusual amount (`0.013370 ETH`) going into a contract and the same amount coming out identifies the pair.
+* **Timing correlation.** A withdrawal that follows a deposit by a few blocks, when nobody else deposited in between, is probably the same user.
+* **Common ownership.** Addresses that later send their funds to the same destination, or that are spent together, are probably controlled by the same person.
+* **Behavioural fingerprint.** Gas price settings, wallet-specific calldata, activity hours.
+
+## How to Work on This Part
+The workshop ships with these contracts (addresses in the [README](./README.md#deployed-addresses)):
+- `NaiveMixer`: accepts deposits of **any** amount and lets anyone holding the matching secret withdraw to any address.
+- `FixedMixer`: same idea, but every deposit is exactly `0.01 ETH`.
+- `Evaluator`: holds one challenge per exercise and checks your answer.
+
+For each exercise, read your challenge with `evaluator.getChallenge(exerciseId, yourAddress)`. It returns the address or transaction hash you start from. Submit the address you found with the matching `exN_...` function.
+
+Rules:
+- You have **3 attempts** per exercise. Investigate first, submit second.
+- Scenarios are assigned per student address. Your neighbour's answer is not yours.
+- No special tooling is required. Every answer can be found with a block explorer.
+
+## Points List
+
+### Exercise 1: follow the gas (1 point)
+Your challenge is a "burner" address that made a single anonymous donation. Find the address that owns it.
+
+1. Look at the first incoming transaction of the burner.
+2. Call `ex1_fundingLink(owner)`.
+
+### Exercise 2: amount fingerprint (2 points)
+Your challenge is a withdrawal transaction from `NaiveMixer`. Find the address that made the matching deposit.
+
+1. List the `Deposit` events of `NaiveMixer`.
+2. Compare amounts with your withdrawal.
+3. Call `ex2_amountFingerprint(depositor)`.
+
+### Exercise 3: timing correlation (2 points)
+Your challenge is a withdrawal transaction from `FixedMixer`. All amounts are identical now, so amounts no longer help. Find the depositor.
+
+1. List deposits and withdrawals in block order.
+2. Work out which deposits were still unspent just before your withdrawal.
+3. Call `ex3_timing(depositor)`.
+
+### Exercise 4: the recipient pays for its own gas (1 point)
+Your challenge is a `FixedMixer` withdrawal sent to a brand new address, at a time when many deposits were pending. Timing does not help. Find the depositor anyway.
+
+1. Withdrawing requires a transaction, and a transaction requires gas. Who paid for it, and where did that ETH come from?
+2. Call `ex4_gasFunder(depositor)`.
+
+### Exercise 5: clustering (2 points)
+Your challenge is a list of five `FixedMixer` withdrawal recipients. Some of them belong to the same person. Report how many distinct people are behind them.
+
+1. Follow what each recipient does with its funds afterwards.
+2. Call `ex5_cluster(numberOfPeople)`.
+
+## Questions
+Answer these in your repository. They are not graded on-chain, but each one is the motivation for a later part.
+
+1. In exercise 2, what single change to the mixer would have defeated you? (See part 8.)
+2. In exercise 3, how many other deposits would the user have needed to wait for to be one-in-ten? What is this number called?
+3. In exercise 4, how can a user withdraw to a fresh address without ever funding it? (See the relayer in parts 4 and 8.)
+4. None of these contracts used any cryptography to hide the link between deposit and withdrawal: the "secret" was revealed on withdrawal. What property would a real mixer need? (See parts 6 and 8.)
+5. Which of the heuristics above still apply to Bitcoin? (See part 7.)
+
+## Notes and Hints
+- Listing events with Foundry:
+  ```bash
+  cast logs --rpc-url $SEPOLIA_RPC_URL --address <mixer> --from-block <deployBlock> "Deposit(address,uint256)"
+  ```
+- Internal transfers (ETH sent by a contract) do not appear in the normal transaction list of an address. Use the "Internal Transactions" tab of the explorer.
+- The scenarios were generated by a script. Real users are messier, and real analysts combine several heuristics at once.
