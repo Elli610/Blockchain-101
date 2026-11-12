@@ -79,7 +79,7 @@ Scheme `1` is secp256k1 with view tags. The first byte of `metadata` must be the
 6. Call `evaluator.ex2_claim(signature)` from your student address. The Evaluator recovers the signer and compares it with the stealth address recorded for you. **3 points**.
 
 ### Exercise 3: send a stealth payment (3 points)
-1. Read the instructor's meta-address from the registry (the instructor's registrant address is given in class).
+1. Read the instructor's meta-address from the registry (the instructor's registrant address is `0x88B3a71021EC789A6CAEBc95be0A277F2462fFC0`, see the [README](./README.md#deployed-addresses)).
 2. Derive a stealth address for it with a fresh ephemeral key.
 3. Send at least `0.0001` Sepolia ETH to the stealth address and call `announce` with scheme `1`, the ephemeral public key, and metadata whose first byte is the view tag followed by the 20 bytes of **your student address**.
 4. The grader bot scans with the instructor's viewing key. When it finds a funded stealth address that derives correctly, it credits the address found in the metadata. A stealth address counts once, for whoever announced it first. **3 points**.

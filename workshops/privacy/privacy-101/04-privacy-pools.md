@@ -35,7 +35,7 @@ The first version supported deposit, partial withdrawal and ragequit per asset. 
 ### 1. Prepare
 - Get Sepolia ETH on your student address.
 - Create a second, **fresh** address in your wallet. Do not fund it. This will be your withdrawal recipient.
-- Open the testnet app (URL given by the instructor) and connect your student address.
+- Open the testnet app at [testnet.privacypools.com](https://testnet.privacypools.com) and connect your student address.
 
 ### 2. Create your pool account
 The app derives your pool secrets, either from a signature or from a recovery phrase it shows you. Save whatever it gives you in your notes.

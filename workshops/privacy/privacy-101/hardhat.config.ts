@@ -50,10 +50,10 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
   },
+  // The hardhat-verify Sourcify client still targets Sourcify's API v1, which
+  // has been removed. Etherscan verification is used instead.
   sourcify: {
-    enabled: true,
-    apiUrl: "https://sourcify.dev/server",
-    browserUrl: "https://repo.sourcify.dev",
+    enabled: false,
   },
 };
 

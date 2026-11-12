@@ -83,7 +83,7 @@ zdt wallet -w ../student-wallet balance
    - Compare with the Monero transaction from [part 2](./02-monero.md). Which observer-visible fields differ?
 
 ### Exercise 2: send a shielded memo (4 points)
-1. Get the instructor's unified address (given in class).
+1. Get the instructor's unified address from the [README](./README.md#deployed-addresses), or from the instructor if it is not listed there yet.
 2. Send a shielded payment of at least `0.001` TAZ whose memo is **your student address on Sepolia**, in lowercase. Using the PCZT flow from the walkthrough:
    ```bash
    zdt pczt -w ../student-wallet create \

@@ -153,22 +153,37 @@ This workshop relies on public test networks, faucets and third-party tools. The
 | Noir | Compiler 1.0.0 and Barretenberg (`@aztec/bb.js` 5.3.0), pinned in `package.json`. |
 
 ## Deployed Addresses
-> Sepolia (chainId 11155111). This is the deployment used for the dry run of November 2026: two scenario sets are seeded for part 1, and the contracts are not verified on Etherscan or Sourcify yet. The deployer `0x88B3a71021EC789A6CAEBc95be0A277F2462fFC0` is the only teacher and the registrant of the instructor stealth meta-address (part 5). Redeploy for a real session.
+> Sepolia (chainId 11155111). All ten contracts are verified on Etherscan. Two scenario sets are seeded for part 1.
+>
+> Teachers of the points token and of the five evaluators: the deployer `0x88B3a71021EC789A6CAEBc95be0A277F2462fFC0`, `0x069b23c3E7F106cbF38aCb58A097E17531aF91ef` and `0x95cf8665A88324432De7324Bac41e0D93ff46019`. Any of them can run the graders and add other teachers with `setTeacher`.
+>
+> The deployer is also the operator of the part 1 mixers (needed to seed more scenario sets) and the registrant of the instructor stealth meta-address (part 5). Those two roles cannot be transferred: the part 5 grader must run with the deployer's key, or the registrant address in part 5 must be changed.
 >
 > `FROM_BLOCK=12118424`
 
 | Contract | Address |
 |---|---|
-| `TDERC20_PRIVACY` (points token) | [`0x72f1d5fF02ff9445c0e32D5B7901631941a9C6F7`](https://sepolia.etherscan.io/address/0x72f1d5fF02ff9445c0e32D5B7901631941a9C6F7) |
-| `EvaluatorTracing` (part 1) | [`0xf1CDF48089003214a4b90594d53E4D1dCC5f8D67`](https://sepolia.etherscan.io/address/0xf1CDF48089003214a4b90594d53E4D1dCC5f8D67) |
-| `NaiveMixer` (part 1) | [`0x7b8023629Fb9b737C0831d18632D01173d7b907f`](https://sepolia.etherscan.io/address/0x7b8023629Fb9b737C0831d18632D01173d7b907f) |
-| `FixedMixer` "timing" (part 1) | [`0x9005A1E9049Cc6eeed1cCd967092A123D1B00421`](https://sepolia.etherscan.io/address/0x9005A1E9049Cc6eeed1cCd967092A123D1B00421) |
-| `FixedMixer` "crowd" (part 1) | [`0x933035b8305b2821b696BA6ACF96d6aF0A556917`](https://sepolia.etherscan.io/address/0x933035b8305b2821b696BA6ACF96d6aF0A556917) |
-| `EvaluatorOffchain` (parts 2 and 3) | [`0x3e2cfD7384BBe7E876B06Ffb230CaaD05aF8dC75`](https://sepolia.etherscan.io/address/0x3e2cfD7384BBe7E876B06Ffb230CaaD05aF8dC75) |
-| `EvaluatorStealth` (part 5) | [`0xb89e758962D2d2847bA4Bf5ACF1538204b284e54`](https://sepolia.etherscan.io/address/0xb89e758962D2d2847bA4Bf5ACF1538204b284e54) |
-| `EvaluatorVoting` (part 6) | [`0xD099C23fbDCb8AA655dD03bC97B103Ea2A1dF96e`](https://sepolia.etherscan.io/address/0xD099C23fbDCb8AA655dD03bC97B103Ea2A1dF96e) |
-| `EvaluatorPool` (part 8) | [`0x24fe33097987977F5bDcD68C9643e1C4F3976563`](https://sepolia.etherscan.io/address/0x24fe33097987977F5bDcD68C9643e1C4F3976563) |
-| `PoseidonT3` library (part 8) | [`0xBEc715A40Edbc6E701D77790dC1a11d6E4Ac01Bd`](https://sepolia.etherscan.io/address/0xBEc715A40Edbc6E701D77790dC1a11d6E4Ac01Bd) |
+| `TDERC20_PRIVACY` (points token) | [`0x72f1d5fF02ff9445c0e32D5B7901631941a9C6F7`](https://sepolia.etherscan.io/address/0x72f1d5fF02ff9445c0e32D5B7901631941a9C6F7#code) |
+| `EvaluatorTracing` (part 1) | [`0xf1CDF48089003214a4b90594d53E4D1dCC5f8D67`](https://sepolia.etherscan.io/address/0xf1CDF48089003214a4b90594d53E4D1dCC5f8D67#code) |
+| `NaiveMixer` (part 1) | [`0x7b8023629Fb9b737C0831d18632D01173d7b907f`](https://sepolia.etherscan.io/address/0x7b8023629Fb9b737C0831d18632D01173d7b907f#code) |
+| `FixedMixer` "timing" (part 1) | [`0x9005A1E9049Cc6eeed1cCd967092A123D1B00421`](https://sepolia.etherscan.io/address/0x9005A1E9049Cc6eeed1cCd967092A123D1B00421#code) |
+| `FixedMixer` "crowd" (part 1) | [`0x933035b8305b2821b696BA6ACF96d6aF0A556917`](https://sepolia.etherscan.io/address/0x933035b8305b2821b696BA6ACF96d6aF0A556917#code) |
+| `EvaluatorOffchain` (parts 2 and 3) | [`0x3e2cfD7384BBe7E876B06Ffb230CaaD05aF8dC75`](https://sepolia.etherscan.io/address/0x3e2cfD7384BBe7E876B06Ffb230CaaD05aF8dC75#code) |
+| `EvaluatorStealth` (part 5) | [`0xb89e758962D2d2847bA4Bf5ACF1538204b284e54`](https://sepolia.etherscan.io/address/0xb89e758962D2d2847bA4Bf5ACF1538204b284e54#code) |
+| `EvaluatorVoting` (part 6) | [`0xD099C23fbDCb8AA655dD03bC97B103Ea2A1dF96e`](https://sepolia.etherscan.io/address/0xD099C23fbDCb8AA655dD03bC97B103Ea2A1dF96e#code) |
+| `EvaluatorPool` (part 8) | [`0x24fe33097987977F5bDcD68C9643e1C4F3976563`](https://sepolia.etherscan.io/address/0x24fe33097987977F5bDcD68C9643e1C4F3976563#code) |
+| `PoseidonT3` library (part 8) | [`0xBEc715A40Edbc6E701D77790dC1a11d6E4Ac01Bd`](https://sepolia.etherscan.io/address/0xBEc715A40Edbc6E701D77790dC1a11d6E4Ac01Bd#code) |
 | `ERC6538Registry` (canonical) | [`0x6538E6bf4B0eBd30A8Ea093027Ac2422ce5d6538`](https://sepolia.etherscan.io/address/0x6538E6bf4B0eBd30A8Ea093027Ac2422ce5d6538#code) |
 | `ERC5564Announcer` (canonical) | [`0x55649E01B5Df198D18D95b5cc5051630cfD45564`](https://sepolia.etherscan.io/address/0x55649E01B5Df198D18D95b5cc5051630cfD45564#code) |
-| `Semaphore` V4 | [`0xC10E5102A2Cc077BE3B9740Fc0Ad7e27Ff8E0245`](https://sepolia.etherscan.io/address/0xC10E5102A2Cc077BE3B9740Fc0Ad7e27Ff8E0245) |
+| `Semaphore` V4 | [`0xC10E5102A2Cc077BE3B9740Fc0Ad7e27Ff8E0245`](https://sepolia.etherscan.io/address/0xC10E5102A2Cc077BE3B9740Fc0Ad7e27Ff8E0245#code) |
+
+Addresses outside Sepolia:
+
+| What | Value |
+|---|---|
+| Instructor registrant for part 5 (holds the stealth meta-address) | `0x88B3a71021EC789A6CAEBc95be0A277F2462fFC0` |
+| Monero stagenet grading address (part 2) | `56wtXbxDPwm1iPFLfkrZ6eD5h8eWJaaLP4x3BC6m4yqrGkZteQKzbDt6EkgdJ1kJZ1DtT4fKbwkFoRPMBkip7WtuQAhE2xy` |
+| Zcash testnet grading address (part 3) | _no grading wallet exists yet: create one and put its unified address here_ |
+| Privacy Pools testnet app (part 4) | [testnet.privacypools.com](https://testnet.privacypools.com) |
+
+The Monero grading address belongs to the wallet created for the dry run. Its files are on the machine that ran it, not in this repository: replace the address with one from a wallet you control before a real session.

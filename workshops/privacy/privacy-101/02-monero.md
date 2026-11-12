@@ -122,7 +122,7 @@ Answer in your repository:
 ### Exercise 4: prove a payment (5 points)
 This is how you get graded on a chain where the grader cannot see anything.
 
-1. Send at least `0.01` stagenet XMR to the instructor's grading address (given in class):
+1. Send at least `0.01` stagenet XMR to the instructor's grading address, listed in the [README](./README.md#deployed-addresses):
    ```
    transfer <instructor_address> 0.01
    ```
