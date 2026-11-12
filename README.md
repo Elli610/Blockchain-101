@@ -27,6 +27,8 @@ This repository contains workshops for all levels, covering topics like:
   - [Cross-chain Bridge](./workshops/infrastructure/crossChain-bridge/) -> Learn to build a bridge between 2 blockchains and transfer tokens from one to the other
   - [Bitcoind 101](./workshops/nodes/bitcoind-101/) -> Learn to setup and interact with a Bitcoin node and and electrum server
   - Ethereum Clients 101 _(Soon!)_
+- **Privacy protocols**:
+  - [Privacy 101](./workshops/privacy/privacy-101/) -> Trace transactions, use Monero, Zcash, Privacy Pools, stealth addresses and Semaphore on testnets, then build a zero-knowledge privacy pool with Noir
 - 🔐 **Cryptography** on the blockchain
   - _soon!_
 - 🧑‍💻 **Account abstraction**

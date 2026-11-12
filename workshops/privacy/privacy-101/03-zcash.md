@@ -95,7 +95,7 @@ zdt wallet -w ../student-wallet balance
    ```bash
    zdt pczt -w ../student-wallet send -s zecrocks < ../memo.combined
    ```
-3. The grader script scans the instructor's wallet for incoming notes, reads each memo, and mints points to the address it finds. **4 points**.
+3. The instructor syncs the grading wallet and runs the grader script on the memos it received. Each memo containing an address earns that address its points, through the `EvaluatorOffchain` contract on Sepolia. A given Zcash transaction is credited only once. **4 points**.
 
 You submit nothing on Sepolia for this exercise. Think about what that implies:
 - Only the instructor can read your memo.

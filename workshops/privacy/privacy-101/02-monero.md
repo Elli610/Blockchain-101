@@ -106,12 +106,12 @@ This is how you get graded on a chain where the grader cannot see anything.
    get_tx_proof <txid> <instructor_address> 0x<your student address>
    ```
    This writes a file named `monero_tx_proof` containing a signature string.
-4. Submit the transaction ID and the proof string with `evaluator.ex_moneroProof(txid, proof)` on Sepolia. The Evaluator only records your submission.
+4. Submit the transaction ID and the proof string with `ex_moneroProof(txid, proof)` on the `EvaluatorOffchain` contract on Sepolia. The contract only records your submission; you can submit again to replace it.
 5. The grader script runs the equivalent of
    ```
    check_tx_proof <txid> <instructor_address> <proof> 0x<your student address>
    ```
-   and, if the proof is valid and the amount is sufficient, mints your points. **5 points**.
+   and, if the proof is valid, the amount is sufficient and the transaction is confirmed, mints your points. A given Monero transaction is credited only once. **5 points**.
 
 Things to try before submitting:
 - Verify your own proof with `check_tx_proof`.

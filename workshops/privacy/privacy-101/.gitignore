@@ -1,0 +1,11 @@
+node_modules
+.env
+cache
+artifacts
+typechain-types
+reference/contracts/generated
+circuits/*/target
+notes
+circuits/*/libs
+reference/circuits/*/libs
+reference/circuits/*/target

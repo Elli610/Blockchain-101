@@ -1,0 +1,7 @@
+[package]
+name = "minipool"
+type = "bin"
+authors = [""]
+
+[dependencies]
+poseidon = { tag = "v0.4.0", git = "https://github.com/noir-lang/poseidon" }

@@ -52,9 +52,11 @@ function validateProof(uint256 groupId, SemaphoreProof calldata proof) external;
 `validateProof` reverts if the proof is invalid **or if its nullifier was already used** in that group. The proof struct exposes, among others, `message`, `scope` and `nullifier`.
 
 ## How to Work on This Part
-You write and deploy one contract, `Voting`, that implements [`IVotingSolution.sol`](./contracts/IVotingSolution.sol) (provided with the workshop contracts), and register it with `evaluator.submitVoting(<yourVoting>)`.
+You write and deploy one contract, `Voting`, that implements [`IVotingSolution.sol`](./contracts/voting/IVotingSolution.sol), and register it with `submitVoting(<yourVoting>)` on the [`EvaluatorVoting`](./contracts/voting/EvaluatorVoting.sol) contract (called "the Evaluator" below).
 
-Planned interface:
+The helper [`scripts/voting-proof.ts`](./scripts/voting-proof.ts) creates identities and builds proofs for your contract; read it, it is short. Run it without `SEMAPHORE_IDENTITY` to create an identity, and with it to generate a proof.
+
+Interface:
 ```solidity
 interface IVotingSolution {
     function groupId() external view returns (uint256);
@@ -92,11 +94,11 @@ Deploy `Voting`, call `evaluator.submitVoting(<yourVoting>)`. The Evaluator chec
 
 ### Exercise 4: no double voting (1 point)
 1. Generate a **second** proof with the **same identity** but the other option.
-2. Call `evaluator.ex4_doubleVote(proof)`. The Evaluator calls `vote(proof)` and expects a revert. **1 point**.
+2. Call `evaluator.ex4_doubleVote(proof)`. The Evaluator checks that the proof is valid and carries the same nullifier as your vote of exercise 3, calls `vote(proof)` and expects a revert. **1 point**.
 
 ### Exercise 5: wrong ballot (1 point)
 1. Generate a proof with an identity that has not voted, using a `scope` different from `ballotId()`.
-2. Call `evaluator.ex5_wrongScope(proof)`. The Evaluator expects your contract to revert. **1 point**.
+2. Call `evaluator.ex5_wrongScope(proof)`. The Evaluator checks that the proof is valid, then expects your contract to revert. **1 point**.
 
 ### Class vote (ungraded)
 The instructor deploys one `Voting` contract for the whole class.
