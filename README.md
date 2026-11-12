@@ -15,6 +15,7 @@ This repository contains workshops for all levels, covering topics like:
   - [ERC20 101](./workshops/solidity/erc20-101/) -> Learn to master the ERC20 token basic functions
   - [ERC20 102](./workshops/solidity/erc20-102/) -> Dive deeper into managing ERC20 tokens
   - [ERC721 101](./workshops/solidity/erc721-101/) -> Learn to master the ERC721 NFT standard
+  - [ERC721 UX 101](./workshops/solidity/erc721-ux-101/) -> Build a dApp frontend that reads, writes and signature-mints ERC721 tokens
   - [Permit and Signatures 101](./workshops/solidity/permit-signatures-101/) -> Master EIP-712, ERC-2612 permits and Permit2
   - [Proxy and Upgradability 101](./workshops/solidity/proxy-upgradability-101/) -> Build EIP-1167, Transparent, UUPS and Beacon proxies from scratch
 - 💸 **DeFi concepts and tools** (smart contracts):
