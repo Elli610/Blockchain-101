@@ -17,6 +17,7 @@ The zero-knowledge circuit is written in [Noir](https://noir-lang.org/).
 
 > **Verify before the session**
 > - `npm test` passes. `test/pool-zk.test.ts` compiles the reference circuits, generates their verifiers and replays this whole part with real proofs. It needs network access the first time, to fetch the Noir Poseidon library.
+> - This part (steps 2 to 7) was run end to end on Sepolia in November 2026 with the reference solution and the helper scripts.
 > - The toolchain versions are pinned in `package.json` (`@noir-lang/noir_js`, `@noir-lang/noir_wasm`, `@aztec/bb.js`). If students also use the `nargo` and `bb` command-line tools, their versions must be compatible with those.
 
 ## The Design
@@ -107,7 +108,7 @@ Each student is assigned a recipient address by the Evaluator: `evaluator.recipi
 
 ## Points List
 
-### Step 1: the circuit (ungraded, but everything depends on it)
+### Step 1: the circuit
 1. Implement `compute_root`: starting from the leaf, hash with each sibling, on the left or right according to the corresponding bit of the index.
 2. Implement the three checks of `main`.
 3. Add tests that must fail: a wrong secret, a wrong sibling, a wrong nullifier hash. If you have `nargo` installed, run them with `nargo test` inside `circuits/minipool`.
@@ -192,7 +193,7 @@ Extend your pool in the spirit of [Privacy Pools](./04-privacy-pools.md). Here t
 3. Add `withdrawWithAssociation(...)` to your pool (see `IMiniPoolAssociation`). It must refuse any `associationRoot` for which `evaluator.isKnownAssociationRoot(associationRoot)` is false.
 4. Rebuild the association tree from the `CommitmentApproved` events, generate the proof, and call `evaluator.bonus_association(proof, root, associationRoot, nullifierHash)`. The Evaluator checks that a made-up association root is refused and that the real one lets you withdraw. **3 points**.
 
-## Attack Your Own Pool (ungraded)
+## Attack Your Own Pool
 Go back to the heuristics of [part 1](./01-deanonymize.md) and apply them to your pool and your classmates' pools.
 
 1. Your pool has only your own deposits in it. What is your anonymity set?
@@ -211,5 +212,7 @@ Go back to the heuristics of [part 1](./01-deanonymize.md) and apply them to you
 - **Check before paying.** Mark the nullifier as spent before sending ETH, not after.
 - **Do not reuse a note.** Depositing the same commitment twice lets you withdraw only once: the nullifier is the same.
 - **Debugging a rejected proof.** If `pool-prove.ts` fails with a failed assertion, your inputs do not satisfy the circuit (for example, the tree you rebuilt differs from the on-chain one). If the proof is generated but rejected on-chain, the public inputs differ, or the deployed verifier does not match your current circuit.
-- **Gas.** With the reference solution, a withdrawal costs about 3.8 million gas (almost all of it is proof verification) and a deposit about 0.8 million (20 Poseidon hashes). Set your gas limits accordingly, and compare with your own numbers.
+- **Gas.** With the reference solution, a withdrawal costs about 3.8 million gas (almost all of it is proof verification) and a deposit about 0.8 million (20 Poseidon hashes). On Sepolia, the step 4 evaluation used 5.1 million gas in total. Compare with your own numbers.
+- **Budget.** Deploying the verifier (a large contract with two libraries) and the pool from Hardhat is the most expensive step. Keep about 0.03 Sepolia ETH for this part, deposits included.
+- **`FROM_BLOCK`.** `pool-prove.ts` rebuilds the tree from your pool's `Deposit` events, starting at `FROM_BLOCK`. Set it in your `.env`, and wait for your deposit to be mined before proving.
 - **Keep `notes/` private.** It is git-ignored. Whoever reads a note file can withdraw the note.

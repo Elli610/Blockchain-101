@@ -34,20 +34,18 @@ async function main() {
 
   const proof = await generateProof(identity, group, BigInt(process.env.VOTE_OPTION || 1), scope);
   console.log(JSON.stringify(proof, null, 2));
+  // Ready to paste as the argument of ex3_vote, ex4_doubleVote, ex5_wrongScope
+  // or vote, for instance with `cast send <address> "ex3_vote((uint256,uint256,uint256,uint256,uint256,uint256[8]))" "<tuple>"`.
   console.log(`\nAs a Solidity tuple:`);
   console.log(
-    JSON.stringify([
-      proof.merkleTreeDepth,
-      proof.merkleTreeRoot,
-      proof.nullifier,
-      proof.message,
-      proof.scope,
-      proof.points,
-    ]),
+    `(${proof.merkleTreeDepth},${proof.merkleTreeRoot},${proof.nullifier},${proof.message},${proof.scope},[${proof.points.join(",")}])`,
   );
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+// The prover keeps worker threads alive: exit explicitly once done.
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });

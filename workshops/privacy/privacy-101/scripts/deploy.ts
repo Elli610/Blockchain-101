@@ -20,10 +20,11 @@ async function main() {
   console.log(`Using ERC-6538 registry at ${registry}`);
   console.log(`Using Semaphore at ${semaphore}`);
 
+  const firstBlock = await ethers.provider.getBlockNumber();
   const workshop = await deployWorkshop({ registry, semaphore }, process.env.POSEIDON_T3_ADDRESS || undefined);
 
-  console.log(`\nFirst block to scan: ${await ethers.provider.getBlockNumber()}`);
   console.log(`\nAdd these to your .env:`);
+  console.log(`FROM_BLOCK=${firstBlock}`);
   console.log(`TDERC20_ADDRESS=${workshop.td.target}`);
   console.log(`EVALUATOR_TRACING_ADDRESS=${workshop.tracing.target}`);
   console.log(`EVALUATOR_OFFCHAIN_ADDRESS=${workshop.offchain.target}`);

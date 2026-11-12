@@ -10,7 +10,8 @@ So far, privacy meant hiding payments. The same cryptography answers a more gene
 * **Tools:** Hardhat or Foundry, the `@semaphore-protocol/core` package (identity, group and proof libraries)
 
 > **Verify before the session**
-> - The Semaphore address below against the [deployed contracts page](https://docs.semaphore.pse.dev/deployed-contracts), and the `ISemaphore` interface against the installed `@semaphore-protocol/contracts` version.
+> - That the Semaphore address below is the one the installed SDK targets. The source of truth is the `deployedContracts` list of the installed `@semaphore-protocol/utils` package, **not** the documentation website: in November 2026 the website still listed an older Sepolia deployment whose verifier rejects (`Semaphore__InvalidProof`) the proofs produced by the current SDK. The Evaluator stores the Semaphore address at deployment, so it must be redeployed if the address changes.
+> - This part was run end to end on Sepolia in November 2026 with `@semaphore-protocol/core` 4.14.5.
 
 ## The Building Blocks
 
@@ -41,7 +42,7 @@ The **scope** defines what "once" means. The same identity produces the same nul
 ### On-chain
 | Contract | Address on Sepolia |
 |---|---|
-| `Semaphore` (V4) | [`0x697c80d1F2654e88d52B16154929EB976568DB04`](https://sepolia.etherscan.io/address/0x697c80d1F2654e88d52B16154929EB976568DB04) |
+| `Semaphore` (V4) | [`0xC10E5102A2Cc077BE3B9740Fc0Ad7e27Ff8E0245`](https://sepolia.etherscan.io/address/0xC10E5102A2Cc077BE3B9740Fc0Ad7e27Ff8E0245) |
 
 The functions you need from `ISemaphore`:
 ```solidity
@@ -54,7 +55,21 @@ function validateProof(uint256 groupId, SemaphoreProof calldata proof) external;
 ## How to Work on This Part
 You write and deploy one contract, `Voting`, that implements [`IVotingSolution.sol`](./contracts/voting/IVotingSolution.sol), and register it with `submitVoting(<yourVoting>)` on the [`EvaluatorVoting`](./contracts/voting/EvaluatorVoting.sol) contract (called "the Evaluator" below).
 
-The helper [`scripts/voting-proof.ts`](./scripts/voting-proof.ts) creates identities and builds proofs for your contract; read it, it is short. Run it without `SEMAPHORE_IDENTITY` to create an identity, and with it to generate a proof.
+The helper [`scripts/voting-proof.ts`](./scripts/voting-proof.ts) creates identities and builds proofs for your contract; read it, it is short.
+```bash
+# Create an identity: prints its secret and the commitment to pass to join().
+npx hardhat run scripts/voting-proof.ts
+
+# Build a proof. VOTE_SCOPE is optional and defaults to your ballot id.
+VOTING_ADDRESS=<yourVoting> SEMAPHORE_IDENTITY=<secret> VOTE_OPTION=1 \
+  npx hardhat run --network sepolia scripts/voting-proof.ts
+```
+The last line it prints is the proof as a tuple, ready to be passed to the Evaluator, for instance with Foundry:
+```bash
+cast send <EvaluatorVoting> "ex3_vote((uint256,uint256,uint256,uint256,uint256,uint256[8]))" "<tuple>" \
+  --private-key $PRIVATE_KEY --rpc-url $SEPOLIA_RPC_URL
+```
+The script reads the group members from the Semaphore events, starting at `FROM_BLOCK`: set it in your `.env` (value in the [README](./README.md#deployed-addresses)).
 
 Interface:
 ```solidity
@@ -100,7 +115,7 @@ Deploy `Voting`, call `evaluator.submitVoting(<yourVoting>)`. The Evaluator chec
 1. Generate a proof with an identity that has not voted, using a `scope` different from `ballotId()`.
 2. Call `evaluator.ex5_wrongScope(proof)`. The Evaluator checks that the proof is valid, then expects your contract to revert. **1 point**.
 
-### Class vote (ungraded)
+### Class vote
 The instructor deploys one `Voting` contract for the whole class.
 1. Join it with a new identity.
 2. Once everyone has joined, vote. **Send the transaction from an address that is not your student address**, or ask a classmate to send your proof for you.

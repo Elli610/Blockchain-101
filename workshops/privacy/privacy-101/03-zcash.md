@@ -75,7 +75,7 @@ zdt wallet -w ../student-wallet balance
 
 ## Exercises
 
-### Exercise 1: look at a shielded transaction (ungraded, written answers)
+### Exercise 1: look at a shielded transaction
 1. Find the transaction that funded you in a Zcash testnet block explorer.
 2. Answer in your repository:
    - Can you see the sender? The amount? Your address?
@@ -101,7 +101,7 @@ You submit nothing on Sepolia for this exercise. Think about what that implies:
 - Only the instructor can read your memo.
 - The instructor cannot tell which Zcash address paid them, only what the memo says.
 
-### Exercise 3: share a viewing key (ungraded)
+### Exercise 3: share a viewing key
 1. Print your account's UFVK:
    ```bash
    zdt wallet -w ../student-wallet list-accounts

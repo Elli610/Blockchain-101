@@ -4,7 +4,7 @@ import { ethers } from "hardhat";
 
 export const CANONICAL_ERC6538_REGISTRY = "0x6538E6bf4B0eBd30A8Ea093027Ac2422ce5d6538";
 export const CANONICAL_ERC5564_ANNOUNCER = "0x55649E01B5Df198D18D95b5cc5051630cfD45564";
-export const SEMAPHORE_SEPOLIA = "0x697c80d1F2654e88d52B16154929EB976568DB04";
+export const SEMAPHORE_SEPOLIA = "0xC10E5102A2Cc077BE3B9740Fc0Ad7e27Ff8E0245";
 
 export const POSEIDON_T3 = "poseidon-solidity/PoseidonT3.sol:PoseidonT3";
 export const TRACING_DENOMINATION = ethers.parseEther("0.001");
